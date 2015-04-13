@@ -1,0 +1,21 @@
+{
+    "onlineExamSystemApp": {
+        "book" : {
+            "home": {
+                "title": "书",
+                "createLabel": "添加一本书",
+                "createOrEditLabel": "添加/编辑一本书"
+            },
+            "delete": {
+                "question": "你确定要删除书： {{ id }}?"
+            },
+            "detail": {
+                "title": "Book"
+            },
+            "title": "书名",
+            "description": "描述",
+            "publicationDate": "出版日期",
+            "price": "价格"
+        }
+    }
+}

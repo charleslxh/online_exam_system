@@ -1,0 +1,121 @@
+<div>
+
+    <h2 translate="onlineExamSystemApp.test2.home.title">Test2</h2>
+
+    <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#saveTest2Modal" ng-click="clear()">
+        <span class="glyphicon glyphicon-flash"></span> <span translate="onlineExamSystemApp.test2.home.createLabel">Create a new Test2</span>
+    </button>
+    <div class="modal fade" id="saveTest2Modal" tabindex="-1" role="dialog" aria-labelledby="myTest2Label"
+         aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form name="editForm" role="form" novalidate ng-submit="create()">
+
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                                ng-click="clear()">&times;</button>
+                        <h4 class="modal-title" id="myTest2Label" translate="onlineExamSystemApp.test2.home.createOrEditLabel">Create or edit a Test2</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label>ID</label>
+                            <input type="text" class="form-control" name="id"
+                                   ng-model="test2.id" readonly>
+                        </div>
+
+                        <div class="form-group">
+                            <label translate="onlineExamSystemApp.test2.test2">Test2</label>
+                            <input type="text" class="form-control" name="test2"
+                                   ng-model="test2.test2">
+
+                        </div>
+
+                        <div class="form-group">
+                            <label translate="onlineExamSystemApp.test2.test1">test1</label>
+                            <select class="form-control" name="test1" ng-model="test2.test1.id" ng-options="test1.id as test1.id for test1 in test1s">
+                            </select>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+                            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+                        </button>
+                        <button type="submit" ng-disabled="editForm.$invalid" class="btn btn-primary">
+                            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="deleteTest2Confirmation">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form name="deleteForm" ng-submit="confirmDelete(test2.id)">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                                ng-click="clear()">&times;</button>
+                        <h4 class="modal-title" translate="entity.delete.title">Confirm delete operation</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p translate="onlineExamSystemApp.test2.delete.question" translate-values="{id: '{{test2.id}}'}">Are you sure you want to delete this Test2?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+                            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+                        </button>
+                        <button type="submit" ng-disabled="deleteForm.$invalid" class="btn btn-danger">
+                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th translate="onlineExamSystemApp.test2.test2">Test2</th>
+                    <th translate="onlineExamSystemApp.test2.test1">test1</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="test2 in test2s">
+                    <td><a ui-sref="test2Detail({id:test2.id})">{{test2.id}}</a></td>
+                    <td>{{test2.test2}}</td>
+                    <td>{{test2.test1.id}}</td>
+                    <td>
+                        <button type="submit"
+                                ui-sref="test2Detail({id:test2.id})"
+                                class="btn btn-info">
+                            <span class="glyphicon glyphicon-eye-open"></span>&nbsp;<span translate="entity.action.view"> View</span>
+                        </button>
+                        <button type="submit"
+                                ng-click="update(test2.id)"
+                                class="btn btn-primary">
+                            <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span translate="entity.action.edit"> Edit</span>
+                        </button>
+                        <button type="submit"
+                                ng-click="delete(test2.id)"
+                                class="btn btn-danger">
+                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete"> Delete</span>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <nav>
+            <ul class="pager">
+                <li ng-show="links['first']" ng-click="loadPage(links['first'])"><a href="#">&lt;&lt;</a></li>
+                <li ng-show="links['prev']" ng-click="loadPage(links['prev'])"><a href="#">&lt;</a></li>
+                <li ng-show="links['next']" ng-click="loadPage(links['next'])"><a href="#">&gt;</a></li>
+                <li ng-show="links['last']" ng-click="loadPage(links['last'])"><a href="#">&gt;&gt;</a></li>
+            </ul>
+        </nav>
+    </div>
+</div>
