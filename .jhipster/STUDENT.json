@@ -1,0 +1,98 @@
+{
+    "relationships": [],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "user_no",
+            "fieldType": "String",
+            "fieldNameCapitalized": "User_no",
+            "fieldNameUnderscored": "user_no",
+            "fieldInJavaBeanMethod": "User_no",
+            "fieldValidate": true,
+            "fieldValidateRules": []
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "gender",
+            "fieldType": "Integer",
+            "fieldNameCapitalized": "Gender",
+            "fieldNameUnderscored": "gender",
+            "fieldInJavaBeanMethod": "Gender",
+            "fieldValidate": false
+        },
+        {
+            "fieldId": 3,
+            "fieldName": "age",
+            "fieldType": "Integer",
+            "fieldNameCapitalized": "Age",
+            "fieldNameUnderscored": "age",
+            "fieldInJavaBeanMethod": "Age",
+            "fieldValidate": true,
+            "fieldValidateRules": []
+        },
+        {
+            "fieldId": 4,
+            "fieldName": "avatar_url",
+            "fieldType": "String",
+            "fieldNameCapitalized": "Avatar_url",
+            "fieldNameUnderscored": "avatar_url",
+            "fieldInJavaBeanMethod": "Avatar_url",
+            "fieldValidate": false
+        },
+        {
+            "fieldId": 5,
+            "fieldName": "school",
+            "fieldType": "String",
+            "fieldNameCapitalized": "School",
+            "fieldNameUnderscored": "school",
+            "fieldInJavaBeanMethod": "School",
+            "fieldValidate": false
+        },
+        {
+            "fieldId": 6,
+            "fieldName": "classess",
+            "fieldType": "String",
+            "fieldNameCapitalized": "Classess",
+            "fieldNameUnderscored": "classess",
+            "fieldInJavaBeanMethod": "Classess",
+            "fieldValidate": false
+        },
+        {
+            "fieldId": 7,
+            "fieldName": "address",
+            "fieldType": "String",
+            "fieldNameCapitalized": "Address",
+            "fieldNameUnderscored": "address",
+            "fieldInJavaBeanMethod": "Address",
+            "fieldValidate": false
+        },
+        {
+            "fieldId": 8,
+            "fieldName": "phone",
+            "fieldType": "String",
+            "fieldNameCapitalized": "Phone",
+            "fieldNameUnderscored": "phone",
+            "fieldInJavaBeanMethod": "Phone",
+            "fieldValidate": false
+        },
+        {
+            "fieldId": 9,
+            "fieldName": "description",
+            "fieldType": "String",
+            "fieldNameCapitalized": "Description",
+            "fieldNameUnderscored": "description",
+            "fieldInJavaBeanMethod": "Description",
+            "fieldValidate": false
+        }
+    ],
+    "fieldsContainOwnerManyToMany": false,
+    "fieldsContainOneToMany": false,
+    "fieldsContainLocalDate": false,
+    "fieldsContainCustomTime": false,
+    "fieldsContainBigDecimal": false,
+    "fieldsContainDateTime": false,
+    "fieldsContainDate": false,
+    "changelogDate": "20150414024052",
+    "pagination": "pager",
+    "validation": true
+}

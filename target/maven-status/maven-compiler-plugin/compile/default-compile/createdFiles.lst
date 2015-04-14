@@ -1,5 +1,6 @@
 com/online/exam/web/rest/UserXAuthTokenController.class
 com/online/exam/security/SecurityUtils.class
+com/online/exam/domain/TEACHER.class
 com/online/exam/security/Http401UnauthorizedEntryPoint.class
 com/online/exam/config/AsyncConfiguration.class
 com/online/exam/repository/CustomAuditEventRepository$1.class
@@ -9,6 +10,7 @@ com/online/exam/web/rest/dto/LoggerDTO.class
 com/online/exam/repository/CustomAuditEventRepository.class
 com/online/exam/domain/util/ISO8601LocalDateDeserializer.class
 com/online/exam/domain/util/CustomDateTimeDeserializer.class
+com/online/exam/domain/STUDENT.class
 com/online/exam/async/ExceptionHandlingAsyncTaskExecutor.class
 com/online/exam/domain/util/CustomDateTimeSerializer.class
 com/online/exam/security/xauth/TokenProvider.class
@@ -50,6 +52,7 @@ com/online/exam/config/XAuthConfiguration.class
 com/online/exam/web/filter/StaticResourcesProductionFilter.class
 com/online/exam/config/audit/AuditEventConverter.class
 com/online/exam/aop/logging/LoggingAspect.class
+com/online/exam/web/rest/TEACHERResource.class
 com/online/exam/config/LocaleConfiguration.class
 com/online/exam/domain/AbstractAuditingEntity.class
 com/online/exam/security/AuthenticationProvider.class
@@ -57,6 +60,7 @@ com/online/exam/service/AuditEventService.class
 com/online/exam/web/rest/util/PaginationUtil.class
 com/online/exam/ApplicationWebXml.class
 com/online/exam/security/UserNotActivatedException.class
+com/online/exam/web/rest/STUDENTResource.class
 com/online/exam/web/filter/gzip/GZipServletResponseWrapper.class
 com/online/exam/domain/PersistentAuditEvent.class
 com/online/exam/web/rest/UserResource.class
@@ -65,7 +69,9 @@ com/online/exam/web/propertyeditors/LocaleDateTimeEditor.class
 com/online/exam/repository/PersistenceAuditEventRepository.class
 com/online/exam/service/MailService.class
 com/online/exam/security/xauth/XAuthTokenFilter.class
+com/online/exam/repository/TEACHERRepository.class
 com/online/exam/config/apidoc/SwaggerConfiguration.class
 com/online/exam/config/CloudDatabaseConfiguration.class
 com/online/exam/web/filter/gzip/GzipResponseHeadersNotModifiableException.class
+com/online/exam/repository/STUDENTRepository.class
 com/online/exam/config/Constants.class

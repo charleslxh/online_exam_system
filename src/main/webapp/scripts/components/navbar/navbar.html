@@ -31,6 +31,10 @@
                                 </span>
                     </a>
                     <ul class="dropdown-menu">
+                        <li ui-sref-active="active" ><a ui-sref="sTUDENT"><span class="glyphicon glyphicon-asterisk"></span>
+                        &#xA0;<span translate="global.menu.entities.sTUDENT">sTUDENT</span></a></li>
+                        <li ui-sref-active="active" ><a ui-sref="tEACHER"><span class="glyphicon glyphicon-asterisk"></span>
+                        &#xA0;<span translate="global.menu.entities.tEACHER">tEACHER</span></a></li>
                         <!-- JHipster will add entities to the menu here -->
                     </ul>
                 </li>
@@ -92,7 +96,7 @@
                     <ul id="languages" class="dropdown-menu">
                         <li active-menu="{{language}}" ng-repeat="language in languages">
                             <a ng-click="changeLanguage(language)">
-                                <img class="pull-left" src="../../../swagger-ui/images/language/French.jpg" height="200" width="301" alt="{{'language.' + language| translate}}">
+                                <img class="pull-left" src="../../../swagger-ui/images/language/China.jpg">
                                 {{'language.' + language| translate}}
                             </a>
                         </li>

@@ -1,0 +1,94 @@
+
+<div>
+    <h2><span translate="onlineExamSystemApp.sTUDENT.detail.title">STUDENT</span> {{sTUDENT.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th translate="entity.detail.field">Field</th>
+                    <th translate="entity.detail.value">Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <span translate="onlineExamSystemApp.sTUDENT.user_no">User_no</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{sTUDENT.user_no}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="onlineExamSystemApp.sTUDENT.gender">Gender</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{sTUDENT.gender}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="onlineExamSystemApp.sTUDENT.age">Age</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{sTUDENT.age}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="onlineExamSystemApp.sTUDENT.avatar_url">Avatar_url</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{sTUDENT.avatar_url}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="onlineExamSystemApp.sTUDENT.school">School</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{sTUDENT.school}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="onlineExamSystemApp.sTUDENT.classess">Classess</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{sTUDENT.classess}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="onlineExamSystemApp.sTUDENT.address">Address</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{sTUDENT.address}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="onlineExamSystemApp.sTUDENT.phone">Phone</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{sTUDENT.phone}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="onlineExamSystemApp.sTUDENT.description">Description</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{sTUDENT.description}}" readonly>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            ui-sref="sTUDENT"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

@@ -15,5 +15,22 @@
         "es": "西班牙语",
         "sv": "瑞典",
         "tr": "土耳其"
+    },
+    "flags": {
+        "ca": "../../../swagger-ui/images/language/cs.jpg",
+        "zh-cn": "../../../swagger-ui/images/language/China.jpg",
+        "zh-tw": "../../../swagger-ui/images/language/zh-tw.jpg",
+        "da": "../../../swagger-ui/images/language/da.jpg",
+        "en": "../../../swagger-ui/images/language/en.jpg",
+        "fr": "../../../swagger-ui/images/language/fr.jpg",
+        "de": "../../../swagger-ui/images/language/de.jpg",
+        "ja": "../../../swagger-ui/images/language/ja.jpg",
+        "kr": "../../../swagger-ui/images/language/kr.jpg",
+        "pl": "../../../swagger-ui/images/language/pl.jpg",
+        "pt-br": "../../../swagger-ui/images/language/pt-br.jpg",
+        "ru": "../../../swagger-ui/images/language/ru.jpg",
+        "es": "../../../swagger-ui/images/language/es.jpg",
+        "sv": "../../../swagger-ui/images/language/sv.jpg",
+        "tr": "../../../swagger-ui/images/language/tr.jpg"
     }
 }

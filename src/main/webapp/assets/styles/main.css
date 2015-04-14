@@ -161,7 +161,7 @@ ul#strength {
 navbar css
 ========================================================================== */
 .navbar .navbar-brand .system-title {
-    font-size: 48px;
+    font-size: 32px;
     font-family: "Tangerine";
 }
 
@@ -179,6 +179,6 @@ navbar css
 
 #languages li img {
     width: 18px;
-    height: 12px;
-    margin: 5px 5px 5px 0;
+    height: 13px;
+    margin: 3px 5px 5px 0;
 }

@@ -6,7 +6,9 @@
         "menu": {
             "home": "Home",
             "entities": {
-                "main": "Entities",
+                "main": "Management",
+                "sTUDENT": "Students",
+                "tEACHER": "Teachers",
                 "additionalEntity": "JHipster will add addtional entities"
             },
             "account": {

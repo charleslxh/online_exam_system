@@ -1,0 +1,26 @@
+{
+    "onlineExamSystemApp": {
+        "tEACHER" : {
+            "home": {
+                "title": "教师管理",
+                "createLabel": "添加新教师",
+                "createOrEditLabel": "添加/编辑教师"
+            },
+            "delete": {
+                "question": "你确定删除教师: {{ id }}?"
+            },
+            "detail": {
+                "title": "教师"
+            },
+            "teacher_no": "教师编号",
+            "gender": "性别",
+            "age": "年龄",
+            "avatar_url": "头像",
+            "school": "学校",
+            "classes": "班级",
+            "address": "地址",
+            "phone": "联系方式",
+            "description": "描述"
+        }
+    }
+}

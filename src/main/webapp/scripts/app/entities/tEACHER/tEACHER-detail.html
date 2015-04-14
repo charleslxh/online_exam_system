@@ -1,0 +1,94 @@
+
+<div>
+    <h2><span translate="onlineExamSystemApp.tEACHER.detail.title">TEACHER</span> {{tEACHER.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th translate="entity.detail.field">Field</th>
+                    <th translate="entity.detail.value">Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <span translate="onlineExamSystemApp.tEACHER.teacher_no">教师编号</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{tEACHER.teacher_no}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="onlineExamSystemApp.tEACHER.gender">性别</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{tEACHER.gender}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="onlineExamSystemApp.tEACHER.age">年龄</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{tEACHER.age}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="onlineExamSystemApp.tEACHER.avatar_url">头像</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{tEACHER.avatar_url}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="onlineExamSystemApp.tEACHER.school">学校</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{tEACHER.school}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="onlineExamSystemApp.tEACHER.classes">班级</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{tEACHER.classes}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="onlineExamSystemApp.tEACHER.address">地址</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{tEACHER.address}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="onlineExamSystemApp.tEACHER.phone">联系方式</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{tEACHER.phone}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="onlineExamSystemApp.tEACHER.description">描述</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{tEACHER.description}}" readonly>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            ui-sref="tEACHER"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

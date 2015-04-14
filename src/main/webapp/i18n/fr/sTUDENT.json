@@ -1,0 +1,27 @@
+{
+    "onlineExamSystemApp": {
+        "sTUDENT" : {
+            "home": {
+                "title": "STUDENTs",
+                "createLabel": "Créer un nouveau STUDENT",
+                "createOrEditLabel": "Créer ou éditer un STUDENT"
+            },
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le STUDENT {{ id }} ?"
+            },
+            "detail": {
+                "title": "STUDENT"
+            },
+            "user_no": "User_no",
+            "gender": "Gender",
+            "age": "Age",
+            "avatar_url": "Avatar_url",
+            "school": "School",
+            "classess": "Classess",
+            "address": "Address",
+            "phone": "Phone",
+            "description": "Description"
+        }
+    }
+}
+

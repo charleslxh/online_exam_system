@@ -1,0 +1,28 @@
+{
+    "onlineExamSystemApp": {
+        "tEACHER" : {
+            "home": {
+                "title": "TEACHERs",
+                "createLabel": "Créer un nouveau TEACHER",
+                "createOrEditLabel": "Créer ou éditer un TEACHER"
+            },
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le TEACHER {{ id }} ?"
+            },
+            "detail": {
+                "title": "TEACHER"
+            },
+            "teacher_no": "Teacher_no",
+            "gender": "Gender",
+            "age": "Age",
+            "avatar_url": "Avatar_url",
+            "school": "School",
+            "classes": "Classes",
+            "address": "Address",
+            "phone": "Phone",
+            "description": "Description",
+            "T_USE": "T_USE"
+        }
+    }
+}
+

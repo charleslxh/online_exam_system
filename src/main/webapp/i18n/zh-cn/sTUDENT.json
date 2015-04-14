@@ -1,0 +1,26 @@
+{
+    "onlineExamSystemApp": {
+        "sTUDENT" : {
+            "home": {
+                "title": "学生管理",
+                "createLabel": "添加新学生",
+                "createOrEditLabel": "添加/编辑学生"
+            },
+            "delete": {
+                "question": "你确定删除学生: {{ id }}?"
+            },
+            "detail": {
+                "title": "学生"
+            },
+            "user_no": "学生编号",
+            "gender": "性别",
+            "age": "年龄",
+            "avatar_url": "头像",
+            "school": "学校",
+            "classess": "班级",
+            "address": "地址",
+            "phone": "联系方式",
+            "description": "描述"
+        }
+    }
+}

@@ -6,8 +6,10 @@
         "menu": {
             "home": "首页",
             "entities": {
-                "main": "权限",
-                "additionalEntity": "可以添加额外的功能"
+                "main": "管理",
+                "additionalEntity": "可以添加额外的功能",
+                "sTUDENT": "学生管理",
+                "tEACHER": "教师管理"
             },
             "account": {
                 "main": "账号",
