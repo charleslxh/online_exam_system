@@ -7,7 +7,7 @@ angular.module('onlineExamSystemApp')
                 parent: 'account',
                 url: '/password',
                 data: {
-                    roles: ['ROLE_USER'],
+                    roles: [],
                     pageTitle: 'global.menu.account.password'
                 },
                 views: {

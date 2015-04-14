@@ -14,39 +14,58 @@
         </div>
         <div class="collapse navbar-collapse" id="navbar-collapse" ng-switch="isAuthenticated()">
             <ul class="nav navbar-nav nav-pills navbar-right">
+
                 <li ui-sref-active="active">
                     <a ui-sref="home">
                         <span class="glyphicon glyphicon-home"></span>
                         <span translate="global.menu.home">Home</span>
                     </a>
                 </li>
-                <li ui-sref-active="active" ng-switch-when="true" class="dropdown pointer">
+
+                <li ng-class="{active: $state.includes('admin')}"  ng-switch-when="true" has-role="ROLE_ADMIN" class="dropdown pointer">
+                    <a class="dropdown-toggle" data-toggle="dropdown" ui-sref="system">
+                        <span>
+                            <span class="glyphicon glyphicon-tower"></span>
+                            <span class="hidden-tablet" translate="global.menu.system.main">User Management</span>
+                        </span>
+                    </a>
+                </li>
+
+                <li ui-sref-active="active" ng-switch-when="true" class="dropdown pointer" has-role="ROLE_TEACHER">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="">
-                                <span>
-                                    <span class="glyphicon glyphicon-th-list"></span>
-                                    <span class="hidden-tablet" translate="global.menu.entities.main">
-                                        Entities
-                                    </span>
-                                    <b class="caret"></b>
-                                </span>
+                        <span>
+                            <span class="glyphicon glyphicon-th-list"></span>
+                            <span class="hidden-tablet" translate="global.menu.teacher.main">
+                                Exam Management
+                            </span>
+                            <b class="caret"></b>
+                        </span>
                     </a>
                     <ul class="dropdown-menu">
                         <li ui-sref-active="active" ><a ui-sref="sTUDENT"><span class="glyphicon glyphicon-asterisk"></span>
-                        &#xA0;<span translate="global.menu.entities.sTUDENT">sTUDENT</span></a></li>
+                        &#xA0;<span translate="global.menu.teacher.question">sTUDENT</span></a></li>
                         <li ui-sref-active="active" ><a ui-sref="tEACHER"><span class="glyphicon glyphicon-asterisk"></span>
-                        &#xA0;<span translate="global.menu.entities.tEACHER">tEACHER</span></a></li>
+                        &#xA0;<span translate="global.menu.teacher.exam">tEACHER</span></a></li>
                         <!-- JHipster will add entities to the menu here -->
                     </ul>
                 </li>
+
+                <li ui-sref-active="active" has-role="ROLE_STUDENT">
+                    <a ui-sref="myexams">
+                        <span class="glyphicon glyphicon-th-list"></span>
+                        <span translate="global.menu.admin.main">My Exams</span>
+                    </a>
+                </li>
+
                 <li ng-class="{active: $state.includes('account')}" class="dropdown pointer">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="">
-                                <span>
-                                    <span class="glyphicon glyphicon-user"></span>
-                                    <span class="hidden-tablet" translate="global.menu.account.main">
-                                        Account
-                                    </span>
-                                    <b class="caret"></b>
-                                </span>
+                        <span>
+                            <span class="glyphicon glyphicon-user"></span>
+                            <span class="hidden-tablet" translate="global.menu.account.main">
+                                Account
+                            </span>
+                            <b class="caret"></b>
+                        </span>
                     </a>
                     <ul class="dropdown-menu">
                         <li ui-sref-active="active" ng-switch-when="true"><a ui-sref="settings"><span class="glyphicon glyphicon-wrench"></span>
@@ -62,6 +81,7 @@
                             &#xA0;<span translate="global.menu.account.register">Register</span></a></li>
                     </ul>
                 </li>
+
                 <li ng-class="{active: $state.includes('admin')}"  ng-switch-when="true" has-role="ROLE_ADMIN" class="dropdown pointer">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="">
                                 <span>

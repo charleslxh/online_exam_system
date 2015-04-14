@@ -1,7 +1,7 @@
-com/online/exam/service/UserServiceTest.class
-com/online/exam/security/SecurityUtilsTest.class
-com/online/exam/web/rest/TEACHERResourceTest.class
-com/online/exam/web/rest/STUDENTResourceTest.class
-com/online/exam/web/rest/TestUtil.class
-com/online/exam/web/rest/AccountResourceTest.class
-com/online/exam/web/rest/UserResourceTest.class
+com\online\exam\web\rest\STUDENTResourceTest.class
+com\online\exam\web\rest\TestUtil.class
+com\online\exam\web\rest\TEACHERResourceTest.class
+com\online\exam\web\rest\UserResourceTest.class
+com\online\exam\service\UserServiceTest.class
+com\online\exam\security\SecurityUtilsTest.class
+com\online\exam\web\rest\AccountResourceTest.class

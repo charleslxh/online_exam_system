@@ -5,11 +5,19 @@
         "flagIcon": "./images/languages/England.png",
         "menu": {
             "home": "Home",
-            "entities": {
-                "main": "Management",
-                "sTUDENT": "Students",
-                "tEACHER": "Teachers",
-                "additionalEntity": "JHipster will add addtional entities"
+            "system": {
+                "main": "User Management",
+                "additionalEntity": "Online Exam System team will add addtional entities"
+            },
+            "teacher": {
+                "main": "Exam Management",
+                "question": "Questions",
+                "exam": "Exams",
+                "additionalEntity": "Online Exam System team will add addtional entities"
+            },
+            "student": {
+                "main": "My Exams",
+                "additionalEntity": "Online Exam System team will add addtional entities"
             },
             "account": {
                 "main": "Account",

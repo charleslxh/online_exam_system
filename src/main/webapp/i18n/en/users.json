@@ -1,0 +1,25 @@
+{
+    "onlineExamSystemApp": {
+        "system" : {
+            "home": {
+                "title": "User Management",
+                "createLabel": "Create a new User",
+                "createOrEditLabel": "Create or edit a User"
+            },
+            "delete": {
+                "question": "Are you sure you want to delete User {{ id }}?"
+            },
+            "detail": {
+                "title": "User"
+            },
+            "user_id": "User ID",
+            "first_name": "firstName",
+            "last_name": "lastName",
+            "create_by": "Create By",
+            "create_time": "Create Time",
+            "last_modify_by": "last_modify_by",
+            "last_modify_time": "last_modify_time",
+            "options": "options"
+        }
+    }
+}

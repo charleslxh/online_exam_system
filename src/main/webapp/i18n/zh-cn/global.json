@@ -5,11 +5,19 @@
         "flagIcon": "./images/languages/China.png",
         "menu": {
             "home": "首页",
-            "entities": {
-                "main": "管理",
-                "additionalEntity": "可以添加额外的功能",
-                "sTUDENT": "学生管理",
-                "tEACHER": "教师管理"
+            "system": {
+                "main": "用户管理",
+                "additionalEntity": "在线考试系统团队会在添加额外的功能"
+            },
+            "teacher": {
+                "main": "试题管理",
+                "question": "题库管理",
+                "exam": "试卷管理",
+                "additionalEntity": "在线考试系统团队会在添加额外的功能"
+            },
+            "student": {
+                "main": "我的考试",
+                "additionalEntity": "在线考试系统团队会在添加额外的功能"
             },
             "account": {
                 "main": "账号",

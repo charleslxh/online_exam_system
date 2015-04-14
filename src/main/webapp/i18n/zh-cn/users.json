@@ -1,0 +1,25 @@
+{
+    "onlineExamSystemApp": {
+        "system" : {
+            "home": {
+                "title": "用户管理",
+                "createLabel": "创建用户",
+                "createOrEditLabel": "创建或编辑用户"
+            },
+            "delete": {
+                "question": "你确定要删除用户 {{ id }}?"
+            },
+            "detail": {
+                "title": "用户"
+            },
+            "user_id": "用户ID",
+            "first_name": "用户名",
+            "last_name": "用户姓",
+            "create_by": "创建者",
+            "create_time": "创建时间",
+            "last_modify_by": "更新者",
+            "last_modify_time": "最后一次更新时间",
+            "options": "操作"
+        }
+    }
+}
