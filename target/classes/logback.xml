@@ -27,7 +27,7 @@
     </appender>
 -->
 
-    <logger name="com.justin.exam" level="DEBUG"/>
+    <logger name="com.online.exam" level="DEBUG"/>
 
     <logger name="javax.activation" level="WARN"/>
     <logger name="javax.mail" level="WARN"/>

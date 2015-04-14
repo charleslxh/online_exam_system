@@ -1,9 +1,5 @@
-com/justin/exam/web/rest/BookResourceTest.class
-com/justin/exam/web/rest/TestUtil.class
-com/justin/exam/web/rest/AccountResourceTest.class
-com/justin/exam/web/rest/AccountResourceTest$1.class
-com/justin/exam/web/rest/Test2ResourceTest.class
-com/justin/exam/security/SecurityUtilsTest.class
-com/justin/exam/web/rest/UserResourceTest.class
-com/justin/exam/service/UserServiceTest.class
-com/justin/exam/web/rest/Test1ResourceTest.class
+com/online/exam/service/UserServiceTest.class
+com/online/exam/security/SecurityUtilsTest.class
+com/online/exam/web/rest/TestUtil.class
+com/online/exam/web/rest/AccountResourceTest.class
+com/online/exam/web/rest/UserResourceTest.class

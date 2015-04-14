@@ -1,0 +1,19 @@
+{
+  "generator-jhipster": {
+    "baseName": "online_exam_system",
+    "packageName": "com.online.exam",
+    "packageFolder": "com/online/exam",
+    "authenticationType": "xauth",
+    "hibernateCache": "ehcache",
+    "clusteredHttpSession": "no",
+    "websocket": "no",
+    "databaseType": "sql",
+    "devDatabaseType": "mysql",
+    "prodDatabaseType": "mysql",
+    "useCompass": false,
+    "buildTool": "maven",
+    "frontendBuilder": "grunt",
+    "javaVersion": "8",
+    "rememberMeKey": "4fbaacd0a292573ed33fb3a0c55dfd3eba901941"
+  }
+}

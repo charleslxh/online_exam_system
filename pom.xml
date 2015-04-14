@@ -9,7 +9,7 @@
         <relativePath/>
     </parent>
 
-    <groupId>com.justin.exam</groupId>
+    <groupId>com.online.exam</groupId>
     <artifactId>online-exam-system</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>war</packaging>
@@ -22,14 +22,14 @@
 
     <properties>
         <HikariCP.version>2.2.5</HikariCP.version>
-        <assertj-core.version>1.6.1</assertj-core.version>
+        <assertj-core.version>1.0.0m1</assertj-core.version>
         <awaitility.version>1.4.0</awaitility.version>
         <commons-io.version>2.4</commons-io.version>
         <commons-lang.version>2.6</commons-lang.version>
         <gatling.version>2.1.4</gatling.version>
         <gatling-maven-plugin.version>2.1.2</gatling-maven-plugin.version>
         <hibernate.version>4.3.6.Final</hibernate.version>
-        <java.version>1.7</java.version>
+        <java.version>1.8</java.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <javax.inject.version>1</javax.inject.version>
@@ -180,7 +180,7 @@
         </dependency>
         <dependency>
             <groupId>com.zaxxer</groupId>
-            <artifactId>HikariCP-java6</artifactId>
+            <artifactId>HikariCP</artifactId>
             <version>${HikariCP.version}</version>
             <exclusions>
                 <exclusion>
@@ -232,7 +232,7 @@
         </dependency>
         <dependency>
             <groupId>org.assertj</groupId>
-            <artifactId>assertj-core</artifactId>
+            <artifactId>assertj-core-java8</artifactId>
             <version>${assertj-core.version}</version>
             <scope>test</scope>
         </dependency>
@@ -501,7 +501,7 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <configuration>
-                    <argLine>-XX:MaxPermSize=128m -Xmx256m</argLine>
+                    <argLine>-Xmx256m</argLine>
                     <!-- Force alphabetical order to have a reproducible build -->
                     <runOrder>alphabetical</runOrder>
                 </configuration>
@@ -530,7 +530,7 @@
                     <defaultSchemaName>online_exam_system</defaultSchemaName>
                     <username>root</username>
                     <password></password>
-                    <referenceUrl>hibernate:spring:com.justin.exam.domain?dialect=org.hibernate.dialect.MySQLInnoDBDialect</referenceUrl>
+                    <referenceUrl>hibernate:spring:com.online.exam.domain?dialect=org.hibernate.dialect.MySQLInnoDBDialect</referenceUrl>
                     <verbose>true</verbose>
                     <logging>debug</logging>
                 </configuration>

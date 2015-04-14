@@ -1,3 +1,14 @@
+/* ==========================================================================
+User definded fonts
+========================================================================== */
+@font-face {
+  font-family: 'Tangerine';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Tangerine'), url("../fonts/google-font.woff2") format('woff2');
+  unicode-range: U0 -0FF, U131, U152 -153, U2C6, U2DA, U2DC, U2000 -206F, U2074, U20AC, U2212, U2215, UE0FF, UEFFD, UF000;
+}
+
 body {
     background: #fafafa;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -145,3 +156,29 @@ ul#strength {
     width:20px;
 }
 /* end Password strength bar style */
+
+/* ==========================================================================
+navbar css
+========================================================================== */
+.navbar .navbar-brand .system-title {
+    font-size: 48px;
+    font-family: "Tangerine";
+}
+
+#main-container .well {
+    margin-top: 68px;
+}
+
+#languages li a {
+    padding-left: 10px;
+}
+
+#languages li:hover, #languages li a:hover {
+    cursor: pointer;
+}
+
+#languages li img {
+    width: 18px;
+    height: 12px;
+    margin: 5px 5px 5px 0;
+}

@@ -7,10 +7,10 @@ spring:
     datasource:
         dataSourceClassName: com.mysql.jdbc.jdbc2.optional.MysqlDataSource
         url: jdbc:mysql://localhost:3306/online_exam_system
-        databaseName:
-        serverName:
+        databaseName: 
+        serverName: 
         username: root
-        password: 5210110
+        password: 
         cachePrepStmts: true
         prepStmtCacheSize: 250
         prepStmtCacheSqlLimit: 2048
@@ -30,7 +30,7 @@ spring:
             hibernate.cache.use_query_cache: false
             hibernate.generate_statistics: false
             hibernate.cache.region.factory_class: org.hibernate.cache.ehcache.SingletonEhCacheRegionFactory
-
+            
 
     mail:
         baseUrl: http://localhost:8080

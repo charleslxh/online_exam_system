@@ -23,12 +23,12 @@
         <!--[if lt IE 10]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <div ng-show="{{ENV === 'dev'}}" class="development" ng-cloak=""></div>
+        <!-- <div ng-show="{{ENV === 'dev'}}" class="development" ng-cloak=""></div> -->
         <div ui-view="navbar" ng-cloak=""></div>
-        <div class="container">
+        <div id="main-container" class="container">
             <div class="well" ui-view="content"></div>
 
-            <div class="footer">
+            <div class="footer text-center">
                 <p translate="footer">This is your footer</p>
             </div>
         </div>
@@ -120,22 +120,7 @@
         <script src="scripts/app/error/error.js"></script>
         <script src="scripts/app/main/main.js"></script>
         <script src="scripts/app/main/main.controller.js"></script>
-        <script src="scripts/components/auth/services/sessions.service.js"></script>
-        <script src="scripts/components/auth/provider/auth.session.service.js"></script>
-        <script src="scripts/app/account/sessions/sessions.js"></script>
-        <script src="scripts/app/account/sessions/sessions.controller.js"></script>
-        <script src="scripts/app/entities/test1/test1.js"></script>
-        <script src="scripts/app/entities/test1/test1.controller.js"></script>
-        <script src="scripts/app/entities/test1/test1-detail.controller.js"></script>
-        <script src="scripts/components/entities/test1/test1.service.js"></script>
-        <script src="scripts/app/entities/book/book.js"></script>
-        <script src="scripts/app/entities/book/book.controller.js"></script>
-        <script src="scripts/app/entities/book/book-detail.controller.js"></script>
-        <script src="scripts/components/entities/book/book.service.js"></script>
-        <script src="scripts/app/entities/test2/test2.js"></script>
-        <script src="scripts/app/entities/test2/test2.controller.js"></script>
-        <script src="scripts/app/entities/test2/test2-detail.controller.js"></script>
-        <script src="scripts/components/entities/test2/test2.service.js"></script>
+        <script src="scripts/components/auth/provider/auth.xauth.service.js"></script>
         <!-- endbuild -->
 </body>
 </html>

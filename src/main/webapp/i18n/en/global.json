@@ -1,14 +1,12 @@
 {
     "global": {
-        "title": "online_exam_system",
+        "title": "Online Exam System",
         "browsehappy": "You are using an <strong>outdated</strong> browser. Please <a href=\"http://browsehappy.com/?locale=en\">upgrade your browser</a> to improve your experience.",
+        "flagIcon": "./images/languages/England.png",
         "menu": {
             "home": "Home",
             "entities": {
                 "main": "Entities",
-                "test1": "Test1",
-                "book": "Book",
-                "test2": "Test2",
                 "additionalEntity": "JHipster will add addtional entities"
             },
             "account": {
@@ -99,5 +97,5 @@
             "datetimelocal": "This field should be a date and time."
         }
     },
-    "footer": "This is your footer"
+    "footer": "Copyright © 2013 Online Exam System All Rights Reserved. NanChang University - Justin Liao "
 }

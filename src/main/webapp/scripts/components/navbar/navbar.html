@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default" role="navigation">
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
@@ -7,7 +7,10 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#/"><span translate="global.title">jhipster</span> <span class="navbar-version">v{{VERSION}}</span></a>
+            <a class="navbar-brand" href="#/">
+                <span class="system-title" translate="global.title"></span>
+                <span class="navbar-version">v{{VERSION}}</span>
+            </a>
         </div>
         <div class="collapse navbar-collapse" id="navbar-collapse" ng-switch="isAuthenticated()">
             <ul class="nav navbar-nav nav-pills navbar-right">
@@ -28,12 +31,6 @@
                                 </span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li ui-sref-active="active" ><a ui-sref="test1"><span class="glyphicon glyphicon-asterisk"></span>
-                        &#xA0;<span translate="global.menu.entities.test1">test1</span></a></li>
-                        <li ui-sref-active="active" ><a ui-sref="book"><span class="glyphicon glyphicon-asterisk"></span>
-                        &#xA0;<span translate="global.menu.entities.book">book</span></a></li>
-                        <li ui-sref-active="active" ><a ui-sref="test2"><span class="glyphicon glyphicon-asterisk"></span>
-                        &#xA0;<span translate="global.menu.entities.test2">test2</span></a></li>
                         <!-- JHipster will add entities to the menu here -->
                     </ul>
                 </li>
@@ -52,8 +49,6 @@
                             &#xA0;<span translate="global.menu.account.settings">Settings</span></a></li>
                         <li ui-sref-active="active" ng-switch-when="true"><a ui-sref="password"><span class="glyphicon glyphicon-lock"></span>
                             &#xA0;<span translate="global.menu.account.password">Password</span></a></li>
-                        <li ui-sref-active="active" ng-switch-when="true"><a ui-sref="sessions"><span class="glyphicon glyphicon-cloud"></span>
-                            &#xA0;<span translate="global.menu.account.sessions">Sessions</span></a></li>
                         <li ui-sref-active="active" ng-switch-when="true"><a href="" ng-click="logout()"><span class="glyphicon glyphicon-log-out"></span>
                             &#xA0;<span translate="global.menu.account.logout">Log out</span></a></li>
                         <li ui-sref-active="active" ng-switch-when="false"><a ui-sref="login"><span class="glyphicon glyphicon-log-in"></span>
@@ -94,9 +89,12 @@
                                     <b class="caret"></b>
                                 </span>
                     </a>
-                    <ul class="dropdown-menu">
+                    <ul id="languages" class="dropdown-menu">
                         <li active-menu="{{language}}" ng-repeat="language in languages">
-                            <a href="" ng-click="changeLanguage(language)">{{'language.' + language| translate}}</a>
+                            <a ng-click="changeLanguage(language)">
+                                <img class="pull-left" src="../../../swagger-ui/images/language/French.jpg" height="200" width="301" alt="{{'language.' + language| translate}}">
+                                {{'language.' + language| translate}}
+                            </a>
                         </li>
                     </ul>
                 </li>

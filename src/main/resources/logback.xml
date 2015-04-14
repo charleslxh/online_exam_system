@@ -27,7 +27,7 @@
     </appender>
 -->
 
-    <logger name="com.justin.exam" level="${logback.loglevel}"/>
+    <logger name="com.online.exam" level="${logback.loglevel}"/>
 
     <logger name="javax.activation" level="WARN"/>
     <logger name="javax.mail" level="WARN"/>

@@ -1,14 +1,12 @@
 {
     "global": {
-        "title": "online_exam_system",
+        "title": "Le système des examens",
         "browsehappy": "Vous utilisez un <strong>ancien</strong> navigateur. Veuillez <a href=\"http://browsehappy.com/?locale=fr\">mettre à jour votre navigateur</a> pour une meilleure expérience.",
+        "flagIcon": "./images/languages/French.png",
         "menu": {
             "home": "Accueil",
             "entities": {
                 "main": "Entités",
-                "test1": "Test1",
-                "book": "Book",
-                "test2": "Test2",
                 "additionalEntity": "JHipster will add addtional entities"
             },
             "account": {
@@ -99,5 +97,5 @@
             "datetimelocal": "Ce champs doit être une date et une heure."
         }
     },
-    "footer": "Ceci est votre pied de page"
+    "footer": "Le droit d’auteur © Le système des examens 2015 La réserve de propriété. L’université NanChang - Justin Liao"
 }

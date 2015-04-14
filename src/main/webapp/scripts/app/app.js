@@ -46,11 +46,23 @@ angular.module('onlineExamSystemApp', ['LocalStorageModule', 'tmh.dynamicLocale'
         };
     })
     
+    .factory('authInterceptor', function ($rootScope, $q, $location, localStorageService) {
+        return {
+            // Add authorization token to headers
+            request: function (config) {
+                config.headers = config.headers || {};
+                var token = localStorageService.get('token');
+                
+                if (token && token.expires && token.expires > new Date().getTime()) {
+                  config.headers['x-auth-token'] = token.token;
+                }
+                
+                return config;
+            }
+        };
+    })
+    
     .config(function ($stateProvider, $urlRouterProvider, $httpProvider, $locationProvider, $translateProvider, tmhDynamicLocaleProvider, httpRequestInterceptorCacheBusterProvider) {
-
-        //enable CSRF
-        $httpProvider.defaults.xsrfCookieName = 'CSRF-TOKEN';
-        $httpProvider.defaults.xsrfHeaderName = 'X-CSRF-TOKEN';
 
         //Cache everything except rest api requests
         httpRequestInterceptorCacheBusterProvider.setMatchlist([/.*api.*/, /.*protected.*/], true);
@@ -78,6 +90,7 @@ angular.module('onlineExamSystemApp', ['LocalStorageModule', 'tmh.dynamicLocale'
             }
         });
 
+        $httpProvider.interceptors.push('authInterceptor');
 
         // Initialize angular-translate
         $translateProvider.useLoader('$translatePartialLoader', {

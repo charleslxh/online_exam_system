@@ -6,7 +6,7 @@ security.basic.enabled: false
 endpoints.jolokia.enabled: false
 
 # security configuration (this key should be unique for your application, and kept secret)
-jhipster.security.rememberme.key: 1d64414fcc7659de87347fa7e767d7ddb9cefbcf
+jhipster.security.rememberme.key: bb9d911d0d84d90b0acb59c1c4b60604a424de7d
 
 async:
     corePoolSize: 2
@@ -26,6 +26,12 @@ spring:
 
     messageSource:
         cacheSeconds: 1
+
+authentication:
+    xauth:
+        secret: myXAuthSecret
+        # Token is valid 30 minutes
+        tokenValidityInSeconds: 1800
 
 swagger:
     title: online_exam_system API

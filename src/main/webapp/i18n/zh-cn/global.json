@@ -1,12 +1,13 @@
 {
     "global": {
-        "title": "online_exam_system",
+        "title": "在线考试系统",
         "browsehappy": "您目前使用<strong>过于老旧</strong>的浏览器, 建议您<a href=\"http://browsehappy.com/?locale=en\">升级浏览器</a>让您有更佳的上网体验.",
+        "flagIcon": "./images/languages/China.png",
         "menu": {
             "home": "首页",
             "entities": {
-                "main": "Entities",
-                "additionalEntity": "JHipster will add addtional entities"
+                "main": "权限",
+                "additionalEntity": "可以添加额外的功能"
             },
             "account": {
                 "main": "账号",
@@ -96,5 +97,5 @@
             "datetimelocal": "This field should be a date and time."
         }
     },
-    "footer": "这里是页脚"
+    "footer": "Copyright © 2013 在线考试系统 All Rights Reserved. 南昌大学 - 廖学辉"
 }

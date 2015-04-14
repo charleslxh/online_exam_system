@@ -17,23 +17,23 @@
             overflowToDisk="false"
             />
 
-    <cache name="com.justin.exam.domain.User"
+    <cache name="com.online.exam.domain.User"
            timeToLiveSeconds="3600">
     </cache>
 
-    <cache name="com.justin.exam.domain.Authority"
+    <cache name="com.online.exam.domain.Authority"
            timeToLiveSeconds="3600">
     </cache>
 
-    <cache name="com.justin.exam.domain.User.authorities"
+    <cache name="com.online.exam.domain.User.authorities"
            timeToLiveSeconds="3600">
     </cache>
 
-    <cache name="com.justin.exam.domain.PersistentToken"
+    <cache name="com.online.exam.domain.PersistentToken"
            timeToLiveSeconds="3600">
     </cache>
 
-    <cache name="com.justin.exam.domain.User.persistentTokens"
+    <cache name="com.online.exam.domain.User.persistentTokens"
            timeToLiveSeconds="3600">
     </cache>
 </ehcache>

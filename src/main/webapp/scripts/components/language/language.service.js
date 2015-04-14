@@ -28,20 +28,7 @@ angular.module('onlineExamSystemApp')
  */
     .constant('LANGUAGES', [
         'en', 'fr'
-        ,'ca'
         ,'zh-cn'
-        ,'zh-tw'
-        ,'da'
-        ,'de'
-        ,'hu'
-        ,'ja'
-        ,'kr'
-        ,'pl'
-        ,'pt-br'
-        ,'ru'
-        ,'es'
-        ,'sv'
-        ,'tr'
         //JHipster will add new languages here
     ]
 );

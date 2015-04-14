@@ -1,8 +1,5 @@
-/home/user/Desktop/Git@OSC/onlineexamsystem/src/test/java/com/justin/exam/web/rest/AccountResourceTest.java
-/home/user/Desktop/Git@OSC/onlineexamsystem/src/test/java/com/justin/exam/web/rest/UserResourceTest.java
-/home/user/Desktop/Git@OSC/onlineexamsystem/src/test/java/com/justin/exam/web/rest/TestUtil.java
-/home/user/Desktop/Git@OSC/onlineexamsystem/src/test/java/com/justin/exam/service/UserServiceTest.java
-/home/user/Desktop/Git@OSC/onlineexamsystem/src/test/java/com/justin/exam/security/SecurityUtilsTest.java
-/home/user/Desktop/Git@OSC/onlineexamsystem/src/test/java/com/justin/exam/web/rest/Test2ResourceTest.java
-/home/user/Desktop/Git@OSC/onlineexamsystem/src/test/java/com/justin/exam/web/rest/Test1ResourceTest.java
-/home/user/Desktop/Git@OSC/onlineexamsystem/src/test/java/com/justin/exam/web/rest/BookResourceTest.java
+/home/user/Desktop/Git@OSC/test/online_exam_system/src/test/java/com/online/exam/web/rest/UserResourceTest.java
+/home/user/Desktop/Git@OSC/test/online_exam_system/src/test/java/com/online/exam/web/rest/AccountResourceTest.java
+/home/user/Desktop/Git@OSC/test/online_exam_system/src/test/java/com/online/exam/web/rest/TestUtil.java
+/home/user/Desktop/Git@OSC/test/online_exam_system/src/test/java/com/online/exam/security/SecurityUtilsTest.java
+/home/user/Desktop/Git@OSC/test/online_exam_system/src/test/java/com/online/exam/service/UserServiceTest.java
