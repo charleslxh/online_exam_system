@@ -24,6 +24,17 @@
                 <constraints unique="true" nullable="false"/>
             </column>
             <column name="password" type="varchar(100)"/>
+
+            <column name="user_no" type="varchar(50)">
+                <constraints unique="true" nullable="false"/>
+            </column>
+            <column name="gender" type="int" defaultValueDate="0"/>
+            <column name="age" type="int"/>
+            <column name="phone" type="varchar(15)"/>
+            <column name="classes" type="varchar(50)"/>
+            <column name="avatar_url" type="varchar(150)"/>
+            <column name="description" type="varchar(500)"/>
+
             <column name="first_name" type="varchar(50)"/>
             <column name="last_name" type="varchar(50)"/>
             <column name="email" type="varchar(100)">l;
@@ -48,6 +59,12 @@
             tableName="T_USER"
             unique="true">
             <column name="login" type="varchar(50)"/>
+        </createIndex>
+
+        <createIndex indexName="idx_user_user_no"
+            tableName="T_USER"
+            unique="true">
+            <column name="user_no" type="varchar(50)"/>
         </createIndex>
 
         <createIndex indexName="idx_user_email"

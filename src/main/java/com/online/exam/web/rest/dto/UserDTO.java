@@ -14,6 +14,11 @@ public class UserDTO {
     @Size(min = 1, max = 50)
     private String login;
 
+    @Pattern(regexp = "^[a-z0-9]*$")
+    @NotNull
+    @Size(min = 1, max = 50)
+    private String userNo;
+
     @NotNull
     @Size(min = 5, max = 100)
     private String password;
@@ -36,9 +41,10 @@ public class UserDTO {
     public UserDTO() {
     }
 
-    public UserDTO(String login, String password, String firstName, String lastName, String email, String langKey,
+    public UserDTO(String login, String userNo, String password, String firstName, String lastName, String email, String langKey,
                    List<String> roles) {
         this.login = login;
+        this.userNo = userNo;
         this.password = password;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -53,6 +59,10 @@ public class UserDTO {
 
     public String getLogin() {
         return login;
+    }
+
+    public String getUserNo() {
+        return userNo;
     }
 
     public String getFirstName() {
@@ -79,6 +89,7 @@ public class UserDTO {
     public String toString() {
         return "UserDTO{" +
         "login='" + login + '\'' +
+        ", userNo='" + userNo + '\'' +
         ", password='" + password + '\'' +
         ", firstName='" + firstName + '\'' +
         ", lastName='" + lastName + '\'' +

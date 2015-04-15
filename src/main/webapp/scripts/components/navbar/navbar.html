@@ -22,7 +22,7 @@
                     </a>
                 </li>
 
-                <li ng-class="{active: $state.includes('admin')}"  ng-switch-when="true" has-role="ROLE_ADMIN" class="dropdown pointer">
+                <li ng-class="{active: $state.includes('admin')}" ng-switch-when="true" has-role="ROLE_ADMIN" class="dropdown pointer">
                     <a class="dropdown-toggle" data-toggle="dropdown" ui-sref="system">
                         <span>
                             <span class="glyphicon glyphicon-tower"></span>
@@ -50,10 +50,12 @@
                     </ul>
                 </li>
 
-                <li ui-sref-active="active" has-role="ROLE_STUDENT">
-                    <a ui-sref="myexams">
-                        <span class="glyphicon glyphicon-th-list"></span>
-                        <span translate="global.menu.admin.main">My Exams</span>
+                <li ng-switch-when="true" has-role="ROLE_STUDENT" class="dropdown pointer">
+                    <a class="dropdown-toggle" data-toggle="dropdown" ui-sref="myexams">
+                        <span>
+                            <span class="glyphicon glyphicon-tower"></span>
+                            <span class="hidden-tablet" translate="global.menu.student.main">My Exams</span>
+                        </span>
                     </a>
                 </li>
 

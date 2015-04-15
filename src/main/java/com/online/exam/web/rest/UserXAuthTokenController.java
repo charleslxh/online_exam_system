@@ -6,6 +6,8 @@ import com.online.exam.security.xauth.TokenProvider;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -23,6 +25,8 @@ import java.util.concurrent.ConcurrentHashMap;
 @RequestMapping("/api")
 public class UserXAuthTokenController {
 
+    private final Logger log = LoggerFactory.getLogger(UserResource.class);
+
     @Inject
     private TokenProvider tokenProvider;
 
@@ -36,11 +40,16 @@ public class UserXAuthTokenController {
             method = RequestMethod.POST)
     @Timed
     public Token authorize(@RequestParam String username, @RequestParam String password) {
-
+        log.debug("==============================================");
+        log.debug("username/pwd: " + username + "," + password);
         UsernamePasswordAuthenticationToken token = new UsernamePasswordAuthenticationToken(username, password);
+        log.debug("token: " + token);
         Authentication authentication = this.authenticationManager.authenticate(token);
+        log.debug("authentication: " + authentication);
         SecurityContextHolder.getContext().setAuthentication(authentication);
         UserDetails details = this.userDetailsService.loadUserByUsername(username);
+        log.debug("details: " + tokenProvider.createToken(details));
+        log.debug("==============================================");
         return tokenProvider.createToken(details);
     }
 }
