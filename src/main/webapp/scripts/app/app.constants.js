@@ -4,6 +4,6 @@ angular.module('onlineExamSystemApp')
 
 .constant('ENV', 'dev')
 
-.constant('VERSION', '0.0.1-EXAM')
+.constant('VERSION', '0.0.1-SNAPSHOT')
 
 ;

@@ -42,6 +42,8 @@
             "language": "语言"
         },
         "form": {
+            "userid": "学号",
+            "userid.placeholder": "您的学号",
             "username": "账号",
             "username.placeholder": "您的账号",
             "newpassword": "新密码",
@@ -60,6 +62,11 @@
                 "dontmatch" : "您输入的密码和确认确认密码不匹配!"
             },
             "validate": {
+                "userNo": {
+                    "required": "您的电子邮件是必填项.",
+                    "minlength": "您的电子邮件长度至少要有1个字符",
+                    "maxlength": "您的电子邮件长度不能超过50个字符"               
+                },
                 "newpassword": {
                     "required": "您的密码是必填项.",
                     "minlength": "您的密码长度至少要有5个字符",
@@ -82,16 +89,16 @@
     },
     "entity": {
         "action": {
-            "back": "Back",
-            "cancel": "Cancel",
-            "delete": "Delete",
-            "edit": "Edit",
-            "save": "Save",
-            "view": "View"
+            "back": "返回",
+            "cancel": "返回",
+            "delete": "删除",
+            "edit": "编辑",
+            "save": "保存",
+            "view": "查看"
         },
         "detail": {
-            "field": "Field",
-            "value": "Value"
+            "field": "名称",
+            "value": "值"
         },
         "delete": {
             "title": "Confirm delete operation"

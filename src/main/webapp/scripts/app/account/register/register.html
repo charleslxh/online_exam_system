@@ -12,11 +12,15 @@
             </div>
 
             <div class="alert alert-danger" ng-show="errorUserExists" translate="register.messages.error.userexists">
-                <strong>Login name already registered!</strong> Please choose another one.
+                <strong>Login name already registered!</strong> Please choose another one. <a href="#/login">To Login</a> 
+            </div>
+            
+            <div class="alert alert-danger" ng-show="errorUserNoExists" translate="register.messages.error.userNoExists">
+                <strong>Student Number is already in use!</strong> Please choose another one. <a href="#/login">To Login</a>
             </div>
 
             <div class="alert alert-danger" ng-show="errorEmailExists" translate="register.messages.error.emailexists">
-                <strong>E-mail is already in use!</strong> Please choose another one.
+                <strong>E-mail is already in use!</strong> Please choose another one. <a href="#/login">To Login</a>
             </div>
 
             <div class="alert alert-danger" ng-show="doNotMatch" translate="global.messages.error.dontmatch">
@@ -46,6 +50,26 @@
                                ng-show="form.login.$error.pattern" translate="register.messages.validate.login.pattern">
                             Your login can only contain lower-case letters and digits
                     </p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label translate="global.form.userid">Student Id</label>
+                    <input type="text" class="form-control" name="userNo" placeholder="{{'global.form.userid.placeholder' | translate}}"
+                           ng-model="registerAccount.userNo" ng-minlength=1 ng-maxlength=50 ng-pattern="/^[a-z0-9]*$/" required>
+                    <div ng-show="form.userNo.$dirty && form.userNo.$invalid">
+                        <p class="help-block"
+                               ng-show="form.userNo.$error.required" translate="register.messages.validate.userNo.required">
+                            Your Student Number is required.
+                        </p>
+                        <p class="help-block"
+                               ng-show="form.userNo.$error.minlength" translate="register.messages.validate.userNo.minlength">
+                            Your Student Number is required to be at least 1 character
+                        </p>
+                        <p class="help-block"
+                               ng-show="form.userNo.$error.maxlength" translate="register.messages.validate.userNo.maxlength">
+                            Your Student Number cannot be longer than 50 characters
+                        </p>
+                        
                     </div>
                 </div>
                 <div class="form-group">
@@ -114,10 +138,10 @@
                 <button type="submit" ng-disabled="form.$invalid" class="btn btn-primary" translate="register.form.button">Register</button>
             </form>
             <p></p>
-            <div class="alert alert-warning" translate="global.messages.info.authenticated">
+           <!--  <div class="alert alert-warning" translate="global.messages.info.authenticated">
                 If you want to <a href="#/login">authenticate</a>, you can try the default login="admin" and
                 password="admin".
-            </div>
+            </div> -->
         </div>
     </div>
 </div>

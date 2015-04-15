@@ -23,6 +23,22 @@ public class UserDTO {
     @Size(min = 5, max = 100)
     private String password;
 
+    private Integer gender;
+    
+    private Integer age;
+
+    @Size(max = 15)
+    private String phone;
+
+    @Size(max = 50)
+    private String classes;
+
+    @Size(max = 150)
+    private String avatarUrl;
+
+    @Size(max = 500)
+    private String description;
+
     @Size(max = 50)
     private String firstName;
 
@@ -41,11 +57,31 @@ public class UserDTO {
     public UserDTO() {
     }
 
-    public UserDTO(String login, String userNo, String password, String firstName, String lastName, String email, String langKey,
-                   List<String> roles) {
+    public UserDTO(
+        String login, 
+        String userNo, 
+        String password, 
+        Integer gender, 
+        Integer age, 
+        String phone, 
+        String classes,
+        String avatarUrl, 
+        String description, 
+        String firstName, 
+        String lastName, 
+        String email, 
+        String langKey,
+        List<String> roles) {
+
         this.login = login;
         this.userNo = userNo;
         this.password = password;
+        this.gender = gender;
+        this.age = age;
+        this.phone = phone;
+        this.classes = classes;
+        this.avatarUrl = avatarUrl;
+        this.description = description;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -59,6 +95,30 @@ public class UserDTO {
 
     public String getLogin() {
         return login;
+    }
+
+    public Integer getGender() {
+        return gender;
+    }
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public String getClasses() {
+        return classes;
+    }
+
+    public String getAvatarUrl() {
+        return avatarUrl;
+    }
+
+    public String getDescription() {
+        return description;
     }
 
     public String getUserNo() {
@@ -91,6 +151,12 @@ public class UserDTO {
         "login='" + login + '\'' +
         ", userNo='" + userNo + '\'' +
         ", password='" + password + '\'' +
+        ", gender='" + gender + '\'' +
+        ", age='" + age + '\'' +
+        ", phone='" + phone + '\'' +
+        ", classes='" + classes + '\'' +
+        ", avatarUrl='" + avatarUrl + '\'' +
+        ", description='" + description + '\'' +
         ", firstName='" + firstName + '\'' +
         ", lastName='" + lastName + '\'' +
         ", email='" + email + '\'' +

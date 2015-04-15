@@ -1,1 +1,130 @@
-user-detail.html
+
+<div>
+    <h2><span translate="onlineExamSystemApp.system.detail.title">User</span> {{user.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th translate="entity.detail.field">Field</th>
+                    <th translate="entity.detail.value">Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td width="20%">
+                        <span translate="onlineExamSystemApp.system.user_id">教师编号</span>
+                    </td>
+                    <td width="60%">
+                        <input type="text" class="input-sm form-control" value="{{user.userNo}}" readonly>
+                    </td>
+                    <td class="text-center" rowspan="4" width="20%">
+                        <img src="../../../assets/images/default.png" height="172px" width="172px" alt="">
+                    </td>
+                </tr>
+                <tr>
+                    <td width="20%">
+                        <span translate="onlineExamSystemApp.system.username">用户名</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{user.login}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="20%">
+                        <span translate="onlineExamSystemApp.system.fullname">真实姓名</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{user.firstName + ' ' +user.lastName}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="20%">
+                        <span translate="onlineExamSystemApp.system.email">邮箱</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{user.email}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="20%">
+                        <span translate="onlineExamSystemApp.system.gender">性别</span>
+                    </td>
+                    <td width="80%">
+                        <input type="text" class="input-sm form-control" value="{{user.gender}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="20%">
+                        <span translate="onlineExamSystemApp.system.age">年龄</span>
+                    </td>
+                    <td width="80%">
+                        <input type="text" class="input-sm form-control" value="{{user.age}}" readonly>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td width="20%">
+                        <span translate="onlineExamSystemApp.system.phone">联系方式</span>
+                    </td>
+                    <td width="80%">
+                        <input type="text" class="input-sm form-control" value="{{user.phone}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="20%">
+                        <span translate="onlineExamSystemApp.system.classes">班级</span>
+                    </td>
+                    <td width="80%">
+                        <input type="text" class="input-sm form-control" value="{{user.classes}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="20%">
+                        <span translate="onlineExamSystemApp.system.description">描述</span>
+                    </td>
+                    <td width="80%">
+                        <input type="text" class="input-sm form-control" value="{{user.description}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="20%">
+                        <span translate="onlineExamSystemApp.system.create_by">创建者</span>
+                    </td>
+                    <td width="80%">
+                        <input type="text" class="input-sm form-control" value="{{user.createdBy}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="20%">
+                        <span translate="onlineExamSystemApp.system.create_time">创建时间</span>
+                    </td>
+                    <td width="80%">
+                        <input type="text" class="input-sm form-control" value="{{user.createdDate | date}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="20%">
+                        <span translate="onlineExamSystemApp.system.last_modify_by">更新者</span>
+                    </td>
+                    <td width="80%">
+                        <input type="text" class="input-sm form-control" value="{{user.lastModifiedBy}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="20%">
+                        <span translate="onlineExamSystemApp.system.last_modify_time">更新时间</span>
+                    </td>
+                    <td width="80%">
+                        <input type="text" class="input-sm form-control" value="{{user.lastModifiedDate | date}}" readonly>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            ui-sref="system"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="onlineExamSystemApp.system.back"> Back</span>
+    </button>
+</div>

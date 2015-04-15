@@ -52,21 +52,24 @@ public class AccountResource {
     public ResponseEntity<?> registerAccount(@Valid @RequestBody UserDTO userDTO, HttpServletRequest request) {
         return userRepository.findOneByLogin(userDTO.getLogin())
             .map(user -> new ResponseEntity<>("login already in use", HttpStatus.BAD_REQUEST))
-            .orElseGet(() -> userRepository.findOneByEmail(userDTO.getEmail())
-                .map(user -> new ResponseEntity<>("e-mail address already in use", HttpStatus.BAD_REQUEST))
-                .orElseGet(() -> {
-                    User user = userService.createUserInformation(userDTO.getLogin(), userDTO.getPassword(),
-                    userDTO.getFirstName(), userDTO.getLastName(), userDTO.getEmail().toLowerCase(),
-                    userDTO.getLangKey());
-                    String baseUrl = request.getScheme() + // "http"
-                    "://" +                                // "://"
-                    request.getServerName() +              // "myhost"
-                    ":" +                                  // ":"
-                    request.getServerPort();               // "80"
+            .orElseGet(() -> userRepository.findOneByUserNo(userDTO.getUserNo())
+                .map(user -> new ResponseEntity<>("student number already in use", HttpStatus.BAD_REQUEST))
+                .orElseGet(() -> userRepository.findOneByEmail(userDTO.getEmail())
+                    .map(user -> new ResponseEntity<>("e-mail address already in use", HttpStatus.BAD_REQUEST))
+                    .orElseGet(() -> {
+                        User user = userService.createUserInformation(userDTO.getLogin(), userDTO.getUserNo(), userDTO.getPassword(),
+                        userDTO.getFirstName(), userDTO.getLastName(), userDTO.getEmail().toLowerCase(),
+                        userDTO.getLangKey());
+                        String baseUrl = request.getScheme() + // "http"
+                        "://" +                                // "://"
+                        request.getServerName() +              // "myhost"
+                        ":" +                                  // ":"
+                        request.getServerPort();               // "80"
 
-                    mailService.sendActivationEmail(user, baseUrl);
-                    return new ResponseEntity<>(HttpStatus.CREATED);
-                })
+                        mailService.sendActivationEmail(user, baseUrl);
+                        return new ResponseEntity<>(HttpStatus.CREATED);
+                    })
+                )
         );
     }
     /**
@@ -108,6 +111,12 @@ public class AccountResource {
                     user.getLogin(),
                     user.getUserNo(),
                     null,
+                    user.getGender(),
+                    user.getAge(),
+                    user.getPhone(),
+                    user.getClasses(),
+                    user.getAvatarUrl(),
+                    user.getDescription(),
                     user.getFirstName(),
                     user.getLastName(),
                     user.getEmail(),

@@ -16,8 +16,9 @@
             "success": "<strong>注册成功!</strong> 请检查您的电子邮件.",
             "error": {
                 "fail": "<strong>注册失败!</strong> 请稍后再试.",
-                "userexists": "<strong>账号已被注册!</strong> 请选择其它账号.",
-                "emailexists": "<strong>E-mail已经被注册!</strong> 请选择其它E-mail."
+                "userexists": "<strong>账号已被注册!</strong> 请选择其它账号或 <a href=\"#/login\"> 登录</a>",
+                "emailexists": "<strong>E-mail已经被注册!</strong> 请选择其它E-mail或 <a href=\"#/login\"> 登录</a>",
+                "userNoExists": "<strong>学号已被注册!</strong> 请选择其他或 <a href=\"#/login\"> 登录</a>"
             }
         }
     }

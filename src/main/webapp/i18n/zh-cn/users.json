@@ -1,6 +1,14 @@
 {
     "onlineExamSystemApp": {
         "system" : {
+            "admin": "管理员",
+            "teacher": "教师",
+            "student": "学生",
+            "role": "角色",
+            "man": "男",
+            "female": "女",
+            "unknow": "未知",
+            "back": "返回",
             "home": {
                 "title": "用户管理",
                 "createLabel": "创建用户",
@@ -12,13 +20,23 @@
             "detail": {
                 "title": "用户"
             },
-            "user_id": "用户ID",
-            "first_name": "用户名",
-            "last_name": "用户姓",
+            "id": "ID",
+            "user_id": "用户编号",
+            "username": "用户名",
+            "gender": "性别",
+            "age": "年龄",
+            "phone": "联系方式",
+            "email": "邮件",
+            "classes": "班级",
+            "fullname": "真实姓名",
+            "avatar": "头像",
+            "description": "描述",
+            "first_name": "名",
+            "last_name": "姓",
             "create_by": "创建者",
             "create_time": "创建时间",
             "last_modify_by": "更新者",
-            "last_modify_time": "最后一次更新时间",
+            "last_modify_time": "最后更新时间",
             "options": "操作"
         }
     }

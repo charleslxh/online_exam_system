@@ -42,8 +42,10 @@
             "language": "Language"
         },
         "form": {
+            "userid": "Student ID",
+            "userid.placeholder": "You Student number",
             "username": "Login",
-            "username.placeholder": "Your login",
+            "username.placeholder": "Your login username",
             "newpassword": "New password",
             "newpassword.placeholder": "New password",
             "confirmpassword": "New password confirmation",
@@ -60,6 +62,11 @@
                 "dontmatch" : "The password and its confirmation do not match!"
             },
             "validate": {
+                "userNo": {
+                    "required": "Your Student Number is required.",
+                    "minlength": "Your Student Number is required to be at least 1 character",
+                    "maxlength": " Your Student Number cannot be longer than 50 characters"
+                },
                 "newpassword": {
                     "required": "Your password is required.",
                     "minlength": "Your password is required to be at least 5 characters.",

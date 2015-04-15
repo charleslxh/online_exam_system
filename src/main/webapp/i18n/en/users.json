@@ -1,6 +1,14 @@
 {
     "onlineExamSystemApp": {
         "system" : {
+            "admin": "Admin",
+            "teacher": "Teacher",
+            "student": "Student",
+            "role": "Role",
+            "man": "Male",
+            "female": "Femail",
+            "unknow": "Unknow",
+            "back": "Back",
             "home": {
                 "title": "User Management",
                 "createLabel": "Create a new User",
@@ -12,13 +20,23 @@
             "detail": {
                 "title": "User"
             },
-            "user_id": "User ID",
-            "first_name": "firstName",
-            "last_name": "lastName",
+            "id": "ID",
+            "user_id": "ID",
+            "username": "Username",
+            "gender": "Gender",
+            "age": "Age",
+            "phone": "Phone",
+            "email": "Email",
+            "classes": "Class",
+            "fullname": "FullName",
+            "avatar": "Avatar",
+            "description": "Description",
+            "first_name": "FirstName",
+            "last_name": "LastName",
             "create_by": "Create By",
             "create_time": "Create Time",
-            "last_modify_by": "last_modify_by",
-            "last_modify_time": "last_modify_time",
+            "last_modify_by": "Last_modify_by",
+            "last_modify_time": "Last_modify_time",
             "options": "options"
         }
     }

@@ -13,7 +13,6 @@ angular.module('onlineExamSystemApp')
                     }
                 }).success(function (response) {
                     localStorageService.set('token', response);
-                    console.log(response, "== auth.xauth.service.js")
                     return response;
                 });
             },

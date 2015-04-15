@@ -43,6 +43,28 @@ public class User extends AbstractAuditingEntity implements Serializable {
     @Column(length = 100)
     private String password;
 
+    @Column(name = "gender")
+    private Integer gender;
+    
+    @Column(name = "age")
+    private Integer age;
+
+    @Size(max = 15)
+    @Column(length = 15)
+    private String phone;
+
+    @Size(max = 50)
+    @Column(length = 50)
+    private String classes;
+
+    @Size(max = 150)
+    @Column(name = "avatar_url", length = 150)
+    private String avatarUrl;
+
+    @Size(max = 500)
+    @Column(length = 500)
+    private String description;
+
     @Size(max = 50)
     @Column(name = "first_name", length = 50)
     private String firstName;
@@ -96,8 +118,56 @@ public class User extends AbstractAuditingEntity implements Serializable {
         return userNo;
     }
 
-    public void setUserNo(String login) {
+    public void setUserNo(String userNo) {
         this.userNo = userNo;
+    }
+
+    public Integer getGender() {
+        return gender;
+    }
+
+    public void setGender(Integer gender) {
+        this.gender = gender;
+    }
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getClasses() {
+        return classes;
+    }
+
+    public void setClasses(String classes) {
+        this.classes = classes;
+    }
+
+    public String getAvatarUrl() {
+        return avatarUrl;
+    }
+
+    public void setAvatarUrl(String avatarUrl) {
+        this.avatarUrl = avatarUrl;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public String getPassword() {
@@ -193,6 +263,12 @@ public class User extends AbstractAuditingEntity implements Serializable {
                 "login='" + login + '\'' +
                 ", userNo='" + userNo + '\'' +
                 ", password='" + password + '\'' +
+                ", gender='" + gender + '\'' +
+                ", age='" + age + '\'' +
+                ", phone='" + phone + '\'' +
+                ", classes='" + classes + '\'' +
+                ", avatarUrl='" + avatarUrl + '\'' +
+                ", description='" + description + '\'' +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +

@@ -7,8 +7,6 @@ angular.module('onlineExamSystemApp')
 
         $scope.loadAll = function() {
             User.query(function(result, headers) {
-                console.log(result)
-        		// $scope.links = ParseLinks.parse(headers('link'));
                 $scope.users = result;
             });
         };
