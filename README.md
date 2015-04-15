@@ -1,2 +1,1 @@
-README for online_exam_system
-==========================
+欢迎使用JAVA应用，祝您使用愉快！
