@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('onlineExamSystemApp')
-    .controller('UserController', function ($scope, Principal, ParseLinks, User) {
+    .controller('UserController', function ($scope, Principal, ParseLinks, User, Auth) {
         $scope.users = [];
         $scope.page = 1;
 
@@ -14,7 +14,23 @@ angular.module('onlineExamSystemApp')
         $scope.loadAll();
 
         $scope.create = function() {
-            console.log($scope.user);
+            $scope.user.roles = [$scope.user.roles]
+            Auth.createAccount($scope.user).then(function () {
+                    $scope.success = 'OK';
+                }).catch(function (response) {
+                    console.log(response)
+                    $scope.success = null;
+                    if (response.status === 400 && response.data === 'login already in use') {
+                        $scope.errorUserExists = 'ERROR';
+                    } else if (response.status === 400 && response.data === 'e-mail address already in use') {
+                        $scope.errorEmailExists = 'ERROR';
+                    } else if (response.status === 400 && response.data === 'student number already in use') {
+                        $scope.errorUserNoExists = 'ERROR';
+                    } else {
+                        $scope.error = 'ERROR';
+                    }
+                }
+            );
         };
 
         $scope.update = function() {

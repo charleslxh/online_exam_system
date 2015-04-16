@@ -58,6 +58,24 @@ public class UserDTO {
     }
 
     public UserDTO(
+        String login,
+        String password,
+        String firstName,
+        String lastName,
+        String email,
+        String langKey,
+        List<String> roles) {
+        
+        this.login = login;
+        this.password = password;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.langKey = langKey;
+        this.roles = roles;
+    }
+
+    public UserDTO(
         String login, 
         String userNo, 
         String password, 

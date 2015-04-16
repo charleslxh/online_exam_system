@@ -13,10 +13,17 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import com.online.exam.web.rest.util.PaginationUtil;
+import org.springframework.data.domain.Page;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
 
 import javax.inject.Inject;
 import java.util.List;
-
+import javax.validation.Valid;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.util.Optional;
 /**
  * REST controller for managing users.
  */
@@ -36,7 +43,7 @@ public class UserResource {
             method = RequestMethod.POST,
             produces = MediaType.APPLICATION_JSON_VALUE)
     @Timed
-    public ResponseEntity<Void> create(@Valid @RequestBody User user) throws URISyntaxException {
+    public ResponseEntity<Void> create(@Valid  User user) throws URISyntaxException {
         log.debug("REST request to save User : {}", user);
         if (user.getId() != null) {
             return ResponseEntity.badRequest().header("Failure", "A new User cannot already have an ID").build();
@@ -52,12 +59,12 @@ public class UserResource {
         method = RequestMethod.PUT,
         produces = MediaType.APPLICATION_JSON_VALUE)
     @Timed
-    public ResponseEntity<Void> update(@Valid @RequestBody User user) throws URISyntaxException {
+    public ResponseEntity<Void> update(@Valid User user) throws URISyntaxException {
         log.debug("REST request to update User : {}", user);
         if (user.getId() == null) {
-            return create(tEACHER);
-        }
-        tEACHERRepository.save(user);
+            return create(user);
+        };
+        userRepository.save(user);
         return ResponseEntity.ok().build();
     }
 
@@ -96,6 +103,8 @@ public class UserResource {
     @Timed
     public void delete(@PathVariable String login) {
         log.debug("REST request to delete user : {}", login);
-        userRepository.delete(login);
+        User user = new User();
+        user.setLogin(login);
+        userRepository.delete(user);
     }
 }

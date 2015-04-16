@@ -147,12 +147,20 @@ public class AccountResourceTest {
     @Transactional
     public void testRegisterValid() throws Exception {
         UserDTO u = new UserDTO(
-            "joe",                  // login
-            "password",             // password
+            "joe", 
+            "8001711046",                 // login
+            "password",
+            0,
+            20,
+            null,
+            null,
+            null,
+            null,             // password
             "Joe",                  // firstName
             "Shmoe",                // lastName
             "joe@example.com",      // e-mail
-            "en",                   // langKey
+            "en",    
+             // langKey
             Arrays.asList(AuthoritiesConstants.USER)
         );
 
@@ -170,8 +178,15 @@ public class AccountResourceTest {
     @Transactional
     public void testRegisterInvalidLogin() throws Exception {
         UserDTO u = new UserDTO(
-            "funky-log!n",          // login <-- invalid
-            "password",             // password
+            "funky-log!n",
+            "8001711046",                 // login
+            "password",
+            0,
+            20,
+            null,
+            null,
+            null,
+            null,           // login <-- invalid
             "Funky",                // firstName
             "One",                  // lastName
             "funky@example.com",    // e-mail
@@ -194,7 +209,14 @@ public class AccountResourceTest {
     public void testRegisterInvalidEmail() throws Exception {
         UserDTO u = new UserDTO(
             "bob",              // login
-            "password",         // password
+            "8001711046",                 // login
+            "password",
+            0,
+            20,
+            null,
+            null,
+            null,
+            null,        // password
             "Bob",              // firstName
             "Green",            // lastName
             "invalid",          // e-mail <-- invalid
@@ -218,7 +240,14 @@ public class AccountResourceTest {
         // Good
         UserDTO u = new UserDTO(
             "alice",                // login
-            "password",             // password
+            "8001711046"  ,               // login
+            "password",
+            0,
+            20,
+            null,
+            null,
+            null,
+            null, 
             "Alice",                // firstName
             "Something",            // lastName
             "alice@example.com",    // e-mail
@@ -254,7 +283,14 @@ public class AccountResourceTest {
         // Good
         UserDTO u = new UserDTO(
             "john",                 // login
-            "password",             // password
+           "8001711046",                // login
+            "password",
+            0,
+            20,
+            null,
+            null,
+            null,
+            null, 
             "John",                 // firstName
             "Doe",                  // lastName
             "john@example.com",     // e-mail
@@ -289,7 +325,14 @@ public class AccountResourceTest {
     public void testRegisterAdminIsIgnored() throws Exception {
         UserDTO u = new UserDTO(
             "badguy",               // login
-            "password",             // password
+            "8001711046" ,                // login
+            "password",
+            0,
+            20,
+            null,
+            null,
+            null,
+            null, 
             "Bad",                  // firstName
             "Guy",                  // lastName
             "badguy@example.com",   // e-mail

@@ -19,11 +19,11 @@
                             <label for="" class="col-sm-2 control-label" translate="onlineExamSystemApp.system.role">Role</label>
                             <div class="col-sm-10">
                                 <label class="radio-inline">
-                                  <input type="radio" name="role" id="inlineRadio1" value="option1" checked>
+                                  <input type="radio" name="role" id="role" ng-model="user.roles" value="ROLE_ADMIN" checked>
                                   <span translate="onlineExamSystemApp.system.admin"></span>
                                 </label>
                                 <label class="radio-inline">
-                                  <input type="radio" name="role" id="inlineRadio2" value="option2">
+                                  <input type="radio" name="role" id="role" ng-model="user.roles" value="ROLE_TEACHER">
                                   <span translate="onlineExamSystemApp.system.teacher"></span>
                                 </label>
                             </div>
