@@ -11,6 +11,7 @@ angular.module('onlineExamSystemApp')
                     return data;
                 }
             },
-            'update': { method:'PUT' }
+            'update': { method: 'PUT' },
+            'delete': { method: 'DELETE' }
         });
     });

@@ -12,4 +12,33 @@ angular.module('onlineExamSystemApp')
         };
 
         $scope.loadAll();
+
+        $scope.create = function() {
+            console.log($scope.user);
+        };
+
+        $scope.update = function() {
+            console.log('user update');
+        };
+
+        $scope.delete = function(login) {
+            User.get(login, function(result) {
+              $scope.user = result;
+              $('#deleteUserConfirmation').modal('show');
+            });
+        };
+
+        $scope.confirmDelete = function(login) {
+            User.delete({login: login},
+                function () {
+                    $scope.loadAll();
+                    $('#deleteUserConfirmation').modal('hide');
+                    $scope.clear();
+                }
+            );
+        }
+
+        $scope.clear = function() {
+            console.log('user clear');
+        }
     });

@@ -12,7 +12,9 @@
             "bugtracker": "JHipster 的缺陷追踪",
             "contact": "在 Twitter 上联络 @java_hipster"
         },
-        "like": "如果您喜欢 JHipster, 请记得给我们加星在",
-        "github": "Github"
+        "like": "如果您喜欢, 请记得在GitHub: ",
+        "github": "<a href='https://github.com/JustinLiao1314/online_exam_system'>https://github.com/JustinLiao1314/online_exam_system </a>",
+        "star": "加星",
+        "share": "分享"
     }
 }

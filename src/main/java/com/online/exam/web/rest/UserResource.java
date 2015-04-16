@@ -30,6 +30,38 @@ public class UserResource {
     private UserRepository userRepository;
 
     /**
+     * POST  /users -> Create a new user.
+     */
+    @RequestMapping(value = "/users",
+            method = RequestMethod.POST,
+            produces = MediaType.APPLICATION_JSON_VALUE)
+    @Timed
+    public ResponseEntity<Void> create(@Valid @RequestBody User user) throws URISyntaxException {
+        log.debug("REST request to save User : {}", user);
+        if (user.getId() != null) {
+            return ResponseEntity.badRequest().header("Failure", "A new User cannot already have an ID").build();
+        }
+        userRepository.save(user);
+        return ResponseEntity.created(new URI("/api/users/" + user.getLogin())).build();
+    }
+
+    /**
+     * PUT  /users -> Updates an existing user.
+     */
+    @RequestMapping(value = "/users",
+        method = RequestMethod.PUT,
+        produces = MediaType.APPLICATION_JSON_VALUE)
+    @Timed
+    public ResponseEntity<Void> update(@Valid @RequestBody User user) throws URISyntaxException {
+        log.debug("REST request to update User : {}", user);
+        if (user.getId() == null) {
+            return create(tEACHER);
+        }
+        tEACHERRepository.save(user);
+        return ResponseEntity.ok().build();
+    }
+
+    /**
      * GET  /users -> get all users.
      */
     @RequestMapping(value = "/users",
@@ -53,5 +85,17 @@ public class UserResource {
         return userRepository.findOneByLogin(login)
                 .map(user -> new ResponseEntity<>(user, HttpStatus.OK))
                 .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
+    }
+
+    /**
+     * DELETE  /users/:id -> delete the "id" user.
+     */
+    @RequestMapping(value = "/users/{id}",
+            method = RequestMethod.DELETE,
+            produces = MediaType.APPLICATION_JSON_VALUE)
+    @Timed
+    public void delete(@PathVariable String login) {
+        log.debug("REST request to delete user : {}", login);
+        userRepository.delete(login);
     }
 }

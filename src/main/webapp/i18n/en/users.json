@@ -15,7 +15,7 @@
                 "createOrEditLabel": "Create or edit a User"
             },
             "delete": {
-                "question": "Are you sure you want to delete User {{ id }}?"
+                "question": "Are you sure you want to delete User"
             },
             "detail": {
                 "title": "User"

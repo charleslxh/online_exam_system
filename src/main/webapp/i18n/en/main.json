@@ -12,7 +12,9 @@
             "bugtracker": "JHipster bug tracker",
             "contact": "contact @java_hipster on Twitter"
         },
-        "like": "If you like JHipster, don't forget to give us a star on",
-        "github": "Github"
+        "like": "If you like it, don't forget to GitHub: ",
+        "github": "https://github.com/JustinLiao1314/online_exam_system",
+        "star": "Star",
+        "share": "Share"
     }
 }
