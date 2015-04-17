@@ -17,6 +17,31 @@
 
             <form name="form" role="form" novalidate ng-submit="save()" show-validation>
 
+
+                <div class="form-group">
+                    <label translate="settings.form.userNo">userNo</label>
+                    <input type="text" class="form-control" name="userNo" placeholder="{{'settings.form.userNo.placeholder' | translate}}" ng-model="settingsAccount.userNo" readonly>
+                </div>
+
+                <div class="form-group">
+                    <label translate="settings.form.login">Login</label>
+                    <input type="text" class="form-control" name="login" placeholder="{{'settings.form.login.placeholder' | translate}}" ng-model="settingsAccount.login" ng-minlength=1 ng-maxlength=50 required maxlength="50">
+                    <div ng-show="form.login.$dirty && form.login.$invalid">
+                        <p class="help-block"
+                               ng-show="form.login.$error.required" translate="settings.messages.validate.login.required">
+                            Your first name is required.
+                        </p>
+                        <p class="help-block"
+                               ng-show="form.login.$error.minlength" translate="settings.messages.validate.login.minlength">
+                            Your first name is required to be at least 1 character
+                        </p>
+                        <p class="help-block"
+                               ng-show="form.login.$error.maxlength" translate="settings.messages.validate.login.maxlength">
+                            Your first name cannot be longer than 50 characters
+                        </p>
+                    </div>
+                </div>
+
                 <div class="form-group">
                     <label translate="settings.form.firstname">First Name</label>
                     <input type="text" class="form-control" name="firstName" placeholder="{{'settings.form.firstname.placeholder' | translate}}"
@@ -78,7 +103,52 @@
                         </p>
                     </div>
                 </div>
-
+                <div class="form-group">
+                    <label translate="settings.form.phone">Phone</label>
+                    <input type="text" class="form-control" name="phone" placeholder="{{'settings.form.phone.placeholder' | translate}}"
+                           ng-model="settingsAccount.phone" ng-minlength=1 ng-maxlength=15 required maxlength="15">
+                    <div ng-show="form.phone.$dirty && form.phone.$invalid">
+                        <p class="help-block"
+                               ng-show="form.phone.$error.required" translate="settings.messages.validate.phone.required">
+                            Your phone is required.
+                        </p>
+                        <p class="help-block"
+                               ng-show="form.phone.$error.minlength" translate="settings.messages.validate.phone.minlength">
+                            Your phone is required to be at least 1 character
+                        </p>
+                        <p class="help-block"
+                               ng-show="form.phone.$error.maxlength" translate="settings.messages.validate.phone.maxlength">
+                            Your phone cannot be longer than 15 characters
+                        </p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label translate="settings.form.classes">Class</label>
+                    <input type="text" class="form-control" name="classes" placeholder="{{'settings.form.classes.placeholder' | translate}}"
+                           ng-model="settingsAccount.classes" ng-minlength=1 ng-maxlength=50 required maxlength="50">
+                    <div ng-show="form.classes.$dirty && form.classes.$invalid">
+                        <p class="help-block"
+                               ng-show="form.classes.$error.required" translate="settings.messages.validate.classes.required">
+                            Your classes is required.
+                        </p>
+                        <p class="help-block"
+                               ng-show="form.classes.$error.minlength" translate="settings.messages.validate.classes.minlength">
+                            Your classes is required to be at least 1 character
+                        </p>
+                        <p class="help-block"
+                               ng-show="form.classes.$error.maxlength" translate="settings.messages.validate.classes.maxlength">
+                            Your classes cannot be longer than 50 characters
+                        </p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label translate="settings.form.age">Age</label>
+                    <input type="text" class="form-control" name="age" placeholder="{{'settings.form.age.placeholder' | translate}}" ng-model="settingsAccount.age">
+                </div>
+                <div class="form-group">
+                    <label translate="settings.form.description">description</label>
+                    <textarea class="form-control" name="description" placeholder="{{'settings.form.description.placeholder' | translate}}" ng-model="settingsAccount.description" cols="30" rows="10"></textarea>
+                </div>
                 <button type="submit" ng-disabled="form.$invalid" class="btn btn-primary" translate="settings.form.button">Save</button>
             </form>
         </div>

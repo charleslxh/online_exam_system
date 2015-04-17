@@ -2,10 +2,26 @@
     "settings": {
         "title": "User settings for [<b>{{username}}</b>]",
         "form": {
+            "login": "Login",
+            "login.placeholder": "Your login name",
+            "userNo": "user NO",
+            "userNo.placeholder": "Your user number",
             "firstname": "First Name",
             "firstname.placeholder": "Your first name",
             "lastname": "Last Name",
             "lastname.placeholder": "Your last name",
+            "gender": "Gender",
+            "gender.plcaeholder": "You gender",
+            "age": "Age",
+            "age.plcaeholder": "You age",
+            "phone": "Phone",
+            "phone.plcaeholder": "You phone",
+            "classes": "Class",
+            "classes.plcaeholder": "You class",
+            "description": "Description",
+            "description.plcaeholder": "You description",
+            "avatarUrl": "Description",
+            "avatarUrl.plcaeholder": "You avatarUrl",
             "button": "Save"
         },
         "messages": {

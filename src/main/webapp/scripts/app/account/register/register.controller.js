@@ -23,7 +23,6 @@ angular.module('onlineExamSystemApp')
                 Auth.createAccount($scope.registerAccount).then(function () {
                     $scope.success = 'OK';
                 }).catch(function (response) {
-                    console.log(response)
                     $scope.success = null;
                     if (response.status === 400 && response.data === 'login already in use') {
                         $scope.errorUserExists = 'ERROR';

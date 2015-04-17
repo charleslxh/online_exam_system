@@ -2,10 +2,26 @@
     "settings": {
         "title": "[<b>{{username}}</b>] 的用户设置",
         "form": {
+            "login": "登录名",
+            "login.placeholder": "您的登录名",
+            "userNo": "用户编号",
+            "userNo.placeholder": "您的用户编号",
             "firstname": "名字",
             "firstname.placeholder": "您的名字",
             "lastname": "姓氏",
             "lastname.placeholder": "您的姓氏",
+            "gender": "性别",
+            "gender.plcaeholder": "您的性别",
+            "age": "年龄",
+            "age.plcaeholder": "您的年龄",
+            "phone": "联系方式",
+            "phone.plcaeholder": "您的联系方式",
+            "classes": "班级",
+            "classes.plcaeholder": "您的班级",
+            "description": "自我描述",
+            "description.plcaeholder": "您的自我描述",
+            "avatarUrl": "avatarUrl",
+            "avatarUrl.plcaeholder": "avatarUrl",
             "button": "保存"
         },
         "messages": {

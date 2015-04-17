@@ -56,6 +56,7 @@ public class UserService {
     public User createUserInformation(String login, String userNo, String password, String firstName, String lastName, String email,
                                       String langKey,  List<String> roles) {
         User newUser = new User();
+        log.debug("Created Information for User roles: {}", roles);
         Authority authority = authorityRepository.findOne(roles.get(0));
         Set<Authority> authorities = new HashSet<>();
         String encryptedPassword = passwordEncoder.encode(password);

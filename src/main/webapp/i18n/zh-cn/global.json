@@ -65,7 +65,7 @@
                 "userNo": {
                     "required": "您的电子邮件是必填项.",
                     "minlength": "您的电子邮件长度至少要有1个字符",
-                    "maxlength": "您的电子邮件长度不能超过50个字符"               
+                    "maxlength": "您的电子邮件长度不能超过50个字符"
                 },
                 "newpassword": {
                     "required": "您的密码是必填项.",
@@ -94,7 +94,9 @@
             "delete": "删除",
             "edit": "编辑",
             "save": "保存",
-            "view": "查看"
+            "view": "查看",
+            "reset": "重新输入",
+            "readd": "继续添加"
         },
         "detail": {
             "field": "名称",

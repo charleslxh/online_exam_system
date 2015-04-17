@@ -94,7 +94,9 @@
             "delete": "Delete",
             "edit": "Edit",
             "save": "Save",
-            "view": "View"
+            "view": "View",
+            "reset": "Try Again",
+            "readd": "Add Other"
         },
         "detail": {
             "field": "Field",

@@ -13,22 +13,28 @@ angular.module('onlineExamSystemApp')
 
         $scope.loadAll();
 
+        $scope.showAdd = function() {
+            $('#saveUserTipsModal').modal('hide');
+            $('#saveUserModal').modal('show');
+        }
+
         $scope.create = function() {
-            $scope.user.roles = [$scope.user.roles]
+            var roles = [];
+            roles.push($scope.user.roles);
+            $scope.user.roles = roles;
+            $scope.user.password = 'abc123_'
+            $scope.user.langKey = 'en'
+
             Auth.createAccount($scope.user).then(function () {
-                    $scope.success = 'OK';
+                    $scope.loadAll();
+                    $scope.showTips = 'success';
+                    $('#saveUserModal').modal('hide');
+                    $('#saveUserTipsModal').modal('show');
+                    $scope.clear();
                 }).catch(function (response) {
-                    console.log(response)
-                    $scope.success = null;
-                    if (response.status === 400 && response.data === 'login already in use') {
-                        $scope.errorUserExists = 'ERROR';
-                    } else if (response.status === 400 && response.data === 'e-mail address already in use') {
-                        $scope.errorEmailExists = 'ERROR';
-                    } else if (response.status === 400 && response.data === 'student number already in use') {
-                        $scope.errorUserNoExists = 'ERROR';
-                    } else {
-                        $scope.error = 'ERROR';
-                    }
+                    $scope.showTips = 'failed';
+                    $('#saveUserModal').modal('hide');
+                    $('#saveUserTipsModal').modal('show');
                 }
             );
         };
@@ -55,6 +61,8 @@ angular.module('onlineExamSystemApp')
         }
 
         $scope.clear = function() {
-            console.log('user clear');
+            $scope.user = {email: null, login: null, password: null, roles: null, userNo: null};
+            $scope.editForm.$setPristine();
+            $scope.editForm.$setUntouched();
         }
     });
