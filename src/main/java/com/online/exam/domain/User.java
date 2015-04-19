@@ -21,7 +21,9 @@ import java.util.Set;
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 public class User extends AbstractAuditingEntity implements Serializable {
 
-    @Id
+	private static final long serialVersionUID = 1L;
+
+	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
@@ -32,7 +34,7 @@ public class User extends AbstractAuditingEntity implements Serializable {
     private String login;
 
     @NotNull
-    @Pattern(regexp = "^[a-z0-9]*$")
+    @Pattern(regexp = "^[a-zA-Z0-9]*$")
     @Size(min = 1, max = 50)
     @Column(name = "user_no", length = 50, unique = true, nullable = false)
     private String userNo;
@@ -88,6 +90,8 @@ public class User extends AbstractAuditingEntity implements Serializable {
     @Size(max = 20)
     @Column(name = "activation_key", length = 20)
     private String activationKey;
+    
+    private Integer deleted;
 
     @JsonIgnore
     @ManyToMany
@@ -202,7 +206,19 @@ public class User extends AbstractAuditingEntity implements Serializable {
         this.email = email;
     }
 
-    public boolean getActivated() {
+    public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
+	public Integer getDeleted() {
+		return deleted;
+	}
+
+	public void setDeleted(Integer deleted) {
+		this.deleted = deleted;
+	}
+
+	public boolean getActivated() {
         return activated;
     }
 
@@ -272,6 +288,7 @@ public class User extends AbstractAuditingEntity implements Serializable {
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
+                ", deleted='" + deleted + '\'' +
                 ", activated='" + activated + '\'' +
                 ", langKey='" + langKey + '\'' +
                 ", activationKey='" + activationKey + '\'' +

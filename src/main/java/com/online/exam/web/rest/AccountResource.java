@@ -8,6 +8,8 @@ import com.online.exam.security.SecurityUtils;
 import com.online.exam.service.MailService;
 import com.online.exam.service.UserService;
 import com.online.exam.web.rest.dto.UserDTO;
+import com.online.exam.web.rest.util.BasicUtil;
+
 import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,6 +21,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
+
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import java.util.*;
@@ -57,15 +60,17 @@ public class AccountResource {
                 .orElseGet(() -> userRepository.findOneByEmail(userDTO.getEmail())
                     .map(user -> new ResponseEntity<>("e-mail address already in use", HttpStatus.BAD_REQUEST))
                     .orElseGet(() -> {
-                        User user = userService.createUserInformation(userDTO.getLogin(), userDTO.getUserNo(), userDTO.getPassword(),
-                        userDTO.getFirstName(), userDTO.getLastName(), userDTO.getEmail().toLowerCase(),
-                        userDTO.getLangKey(), userDTO.getRoles());
-                        String baseUrl = request.getScheme() + // "http"
-                        "://" +                                // "://"
-                        request.getServerName() +              // "myhost"
-                        ":" +                                  // ":"
-                        request.getServerPort();               // "80"
-
+                        User user = userService.createUserInformation(
+                        	userDTO.getLogin(), 
+                        	userDTO.getUserNo(), 
+                        	userDTO.getPassword(),
+	                        userDTO.getFirstName(), 
+	                        userDTO.getLastName(), 
+	                        userDTO.getEmail().toLowerCase(),
+	                        userDTO.getLangKey(), 
+	                        userDTO.getRoles()
+	                    );
+                        String baseUrl = BasicUtil.getEmailBasicUrl(request);
                         mailService.sendActivationEmail(user, baseUrl);
                         return new ResponseEntity<>(HttpStatus.CREATED);
                     })
@@ -138,7 +143,18 @@ public class AccountResource {
             .findOneByLogin(userDTO.getLogin())
             .filter(u -> u.getLogin().equals(SecurityUtils.getCurrentLogin()))
             .map(u -> {
-                userService.updateUserInformation(userDTO.getFirstName(), userDTO.getLastName(), userDTO.getEmail());
+                userService.updateUserInformation(
+                	userDTO.getLogin(),
+                	userDTO.getPhone(),
+                	userDTO.getGender(),
+                	userDTO.getAge(),
+                	userDTO.getClasses(),
+                	userDTO.getDescription(),
+                	userDTO.getAvatarUrl(),
+                	userDTO.getFirstName(), 
+                	userDTO.getLastName(), 
+                	userDTO.getEmail()
+                );
                 return new ResponseEntity<String>(HttpStatus.OK);
             })
             .orElseGet(() -> new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR));
@@ -151,11 +167,27 @@ public class AccountResource {
             method = RequestMethod.POST,
             produces = MediaType.APPLICATION_JSON_VALUE)
     @Timed
-    public ResponseEntity<?> changePassword(@RequestBody String password) {
+    public ResponseEntity<?> changePassword(@RequestBody String password, HttpServletRequest request) {
         if (StringUtils.isEmpty(password) || password.length() < 5 || password.length() > 50) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
         userService.changePassword(password);
+        String baseUrl = BasicUtil.getEmailBasicUrl(request);
+        
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+    /**
+    * POST /updatePasswordById -> update password by id
+    **/
+    @RequestMapping(value = "/account/updatePassword",
+            method = RequestMethod.POST)
+    @Timed
+    public ResponseEntity<?> upadtePassword(@RequestBody String password) {
+        if (StringUtils.isEmpty(password) || password.length() < 5 || password.length() > 50) {
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
+        userService.upadtePasswordById(password);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 }

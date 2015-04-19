@@ -51,6 +51,8 @@ public class UserDTO {
 
     @Size(min = 2, max = 5)
     private String langKey;
+    
+    private Integer deleted;
 
     private List<String> roles;
 
@@ -127,7 +129,11 @@ public class UserDTO {
         return phone;
     }
 
-    public String getClasses() {
+    public Integer getDeleted() {
+		return deleted;
+	}
+
+	public String getClasses() {
         return classes;
     }
 
@@ -178,6 +184,7 @@ public class UserDTO {
         ", firstName='" + firstName + '\'' +
         ", lastName='" + lastName + '\'' +
         ", email='" + email + '\'' +
+        ", deleted='" + deleted + '\'' +
         ", langKey='" + langKey + '\'' +
         ", roles=" + roles +
         '}';

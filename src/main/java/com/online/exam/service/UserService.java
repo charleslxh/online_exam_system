@@ -6,6 +6,7 @@ import com.online.exam.repository.AuthorityRepository;
 import com.online.exam.repository.UserRepository;
 import com.online.exam.security.SecurityUtils;
 import com.online.exam.service.util.RandomUtil;
+
 import org.joda.time.DateTime;
 import org.joda.time.LocalDate;
 import org.slf4j.Logger;
@@ -16,6 +17,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.inject.Inject;
+
 import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
@@ -79,8 +81,25 @@ public class UserService {
         return newUser;
     }
 
-    public void updateUserInformation(String firstName, String lastName, String email) {
+    public void updateUserInformation(
+    		String login, 
+    		String phone, 
+    		Integer gender, 
+    		Integer age, 
+    		String classes, 
+    		String description, 
+    		String avatarUrl, 
+    		String firstName, 
+    		String lastName, 
+    		String email) {
         userRepository.findOneByLogin(SecurityUtils.getCurrentLogin()).ifPresent(u -> {
+        	u.setLogin(login);
+        	u.setPhone(phone);
+        	u.setGender(gender);
+        	u.setAge(age);
+        	u.setClasses(classes);
+        	u.setDescription(description);
+        	u.setAvatarUrl(avatarUrl);
             u.setFirstName(firstName);
             u.setLastName(lastName);
             u.setEmail(email);
@@ -120,5 +139,19 @@ public class UserService {
             log.debug("Deleting not activated user {}", user.getLogin());
             userRepository.delete(user);
         }
+    }
+
+    public void deleteUserByAdmin(Long id) {
+        log.debug("Deleting user logicly by id: {}", id);
+        userRepository.deleteUserLogic(id);
+    }
+
+    public void upadtePasswordById(String password) {
+        userRepository.findOneByLogin(SecurityUtils.getCurrentLogin()).ifPresent(u-> {
+            String encryptedPassword = passwordEncoder.encode(password);
+            Long id = u.getId();
+            u.setPassword(encryptedPassword);
+            userRepository.upadtePasswordById(encryptedPassword, id);
+        });
     }
 }

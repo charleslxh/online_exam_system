@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('onlineExamSystemApp')
-    .controller('UserController', function ($scope, Principal, ParseLinks, User, Auth) {
+    .controller('UserController', function ($scope, Principal, ParseLinks, User, Auth, userDelete) {
         $scope.users = [];
         $scope.page = 1;
 
@@ -24,7 +24,7 @@ angular.module('onlineExamSystemApp')
             $scope.user.roles = roles;
             $scope.user.password = 'abc123_'
             $scope.user.langKey = 'en'
-
+            
             Auth.createAccount($scope.user).then(function () {
                     $scope.loadAll();
                     $scope.showTips = 'success';
@@ -50,8 +50,8 @@ angular.module('onlineExamSystemApp')
             });
         };
 
-        $scope.confirmDelete = function(login) {
-            User.delete({login: login},
+        $scope.confirmDelete = function(id) {
+            userDelete.get({id: id},
                 function () {
                     $scope.loadAll();
                     $('#deleteUserConfirmation').modal('hide');

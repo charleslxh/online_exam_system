@@ -9,6 +9,7 @@ angular.module('onlineExamSystemApp')
         });
 
         $scope.save = function () {
+            console.log($scope.settingsAccount)
             Auth.updateAccount($scope.settingsAccount).then(function() {
                 $scope.error = null;
                 $scope.success = 'OK';

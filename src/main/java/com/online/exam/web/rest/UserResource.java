@@ -4,6 +4,8 @@ import com.codahale.metrics.annotation.Timed;
 import com.online.exam.domain.User;
 import com.online.exam.repository.UserRepository;
 import com.online.exam.security.AuthoritiesConstants;
+import com.online.exam.service.UserService;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
@@ -12,15 +14,21 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
 import com.online.exam.web.rest.util.PaginationUtil;
+
 import org.springframework.data.domain.Page;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 
 import javax.inject.Inject;
+
 import java.util.List;
+
 import javax.validation.Valid;
+
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.Optional;
@@ -35,6 +43,9 @@ public class UserResource {
 
     @Inject
     private UserRepository userRepository;
+    
+    @Inject
+    private UserService userService;
 
     /**
      * POST  /users -> Create a new user.
@@ -77,7 +88,7 @@ public class UserResource {
     @Timed
     public List<User> getAll() {
         log.debug("REST request to get all Users");
-        return userRepository.findAll();
+        return userRepository.findAllByDeleted();
     }
 
     /**
@@ -97,14 +108,12 @@ public class UserResource {
     /**
      * DELETE  /users/:id -> delete the "id" user.
      */
-    @RequestMapping(value = "/users/{id}",
-            method = RequestMethod.DELETE,
+    @RequestMapping(value = "/users/delete",
+            method = RequestMethod.GET,
             produces = MediaType.APPLICATION_JSON_VALUE)
     @Timed
-    public void delete(@PathVariable String login) {
-        log.debug("REST request to delete user : {}", login);
-        User user = new User();
-        user.setLogin(login);
-        userRepository.delete(user);
+    public void delete(@RequestParam(value = "id") Long id) {
+        log.debug("REST request to delete user : {}", id);
+        userService.deleteUserByAdmin(id);
     }
 }

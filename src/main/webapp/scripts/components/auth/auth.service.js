@@ -90,7 +90,7 @@ angular.module('onlineExamSystemApp')
 
             changePassword: function (newPassword, callback) {
                 var cb = callback || angular.noop;
-
+                
                 return Password.save(newPassword, function () {
                     return cb();
                 }, function (err) {
