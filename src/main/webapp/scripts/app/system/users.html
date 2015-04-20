@@ -9,7 +9,7 @@
          aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <form name="editForm" class="form-horizontal" role="form" ng-submit="create()" show-validation>
+                <form name="saveForm" class="form-horizontal" role="form" ng-submit="create()" show-validation>
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true" ng-click="clear()">&times;</button>
                         <h4 class="modal-title" id="myUserLabel" translate="onlineExamSystemApp.system.home.createOrEditLabel">Create or edit a User</h4>
@@ -74,7 +74,7 @@
         </div>
     </div>
 
-        <div class="modal fade" id="saveUserTipsModal">
+    <div class="modal fade" id="saveUserTipsModal">
         <div class="modal-dialog">
             <div class="modal-content">
                 <form name="deleteForm">
@@ -100,6 +100,121 @@
                         </button>
                         <button type="button" ng-if="showTips === 'failed'" class="btn btn-info" data-dismiss="modal" ng-click="showAdd()">
                             <span class="glyphicon glyphicon-ban-save"></span>&nbsp;<span translate="entity.action.reset">Try Again</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit user information model -->
+    <div class="modal fade" id="editUserModal" tabindex="-1" role="dialog" aria-labelledby="myUserLabel"
+         aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form name="editForm" class="form-horizontal" role="form" ng-submit="update()" show-validation>
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true" ng-click="clear()">&times;</button>
+                        <h4 class="modal-title" id="myUserLabel" translate="onlineExamSystemApp.system.home.createOrEditLabel">Create or edit a User</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="" class="col-sm-2 control-label" translate="onlineExamSystemApp.system.role">Role</label>
+                            <div class="col-sm-10">
+                                <label class="radio-inline">
+                                  <input type="radio" name="role" id="role" ng-model="user.roles" value="ROLE_ADMIN" checked="checked">
+                                  <span translate="onlineExamSystemApp.system.admin"></span>
+                                </label>
+                                <label class="radio-inline">
+                                  <input type="radio" name="role" id="role" ng-model="user.roles" value="ROLE_TEACHER">
+                                  <span translate="onlineExamSystemApp.system.teacher"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" translate="onlineExamSystemApp.system.id">ID</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" value="{{user.id}}" name="id" ng-model="user.id" readonly>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" translate="onlineExamSystemApp.system.user_id">ID</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" value="{{user.userNo}}" name="userNo" ng-model="user.userNo" readonly>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" translate="onlineExamSystemApp.system.username">Username</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" value="{{user.login}}" name="login" ng-model="user.login" readonly>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" translate="onlineExamSystemApp.system.email">Email</label>
+                            <div class="col-sm-10">
+                                <input type="email" class="form-control" value="{{user.email}}" name="email" ng-model="user.email" required>
+                            </div>
+                            <div ng-show="editForm.email.$invalid"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" translate="onlineExamSystemApp.system.classes">Classes</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" value="{{user.classes}}" name="classes" ng-model="user.classes">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" translate="onlineExamSystemApp.system.phone">Phone</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" value="{{user.phone}}" name="phone" ng-model="user.phone">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" translate="onlineExamSystemApp.system.first_name">firstName</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" value="{{user.firstName}}" name="firstName" ng-model="user.firstName">
+                            </div>
+                            <label class="col-sm-2 control-label" translate="onlineExamSystemApp.system.last_name">lastName</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" value="{{user.lastName}}" name="lastName" ng-model="user.lastName">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="" class="col-sm-2 control-label" translate="onlineExamSystemApp.system.gender">Gender</label>
+                            <div class="col-sm-4">
+                                <label class="radio-inline">
+                                  <input type="radio" name="gender" id="gender" ng-model="user.gender" value="0" checked="checked">
+                                  <span translate="onlineExamSystemApp.system.male">Male</span>
+                                </label>
+                                <label class="radio-inline">
+                                  <input type="radio" name="gender" id="gender" ng-model="user.gender" value="1">
+                                  <span translate="onlineExamSystemApp.system.female">Female</span>
+                                </label>
+                                <label class="radio-inline">
+                                  <input type="radio" name="gender" id="gender" ng-model="user.gender" value="2">
+                                  <span translate="onlineExamSystemApp.system.unknow">Unknow</span>
+                                </label>
+                            </div>
+                            <label class="col-sm-2 control-label" translate="onlineExamSystemApp.system.age">Age</label>
+                            <div class="col-sm-4">
+                                <input type="number" class="form-control" value="{{user.age}}" name="age" ng-model="user.age">
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">
+                            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+                        </button>
+                        <button type="submit" ng-disabled="editForm.$invalid" class="btn btn-primary">
+                            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
                         </button>
                     </div>
                 </form>

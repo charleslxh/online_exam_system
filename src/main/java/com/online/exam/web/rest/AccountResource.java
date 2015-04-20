@@ -49,7 +49,8 @@ public class AccountResource {
      * POST  /register -> register the user.
      */
     @RequestMapping(value = "/register",
-            method = RequestMethod.POST)
+            method = RequestMethod.POST,
+            produces = MediaType.APPLICATION_JSON_VALUE)
     @Timed
     public ResponseEntity<?> registerAccount(@Valid @RequestBody UserDTO userDTO, HttpServletRequest request) {
 
@@ -61,14 +62,15 @@ public class AccountResource {
                     .map(user -> new ResponseEntity<>("e-mail address already in use", HttpStatus.BAD_REQUEST))
                     .orElseGet(() -> {
                         User user = userService.createUserInformation(
-                        	userDTO.getLogin(), 
-                        	userDTO.getUserNo(), 
+                        	userDTO.getLogin(),
+                        	userDTO.getUserNo(),
                         	userDTO.getPassword(),
-	                        userDTO.getFirstName(), 
-	                        userDTO.getLastName(), 
+	                        userDTO.getFirstName(),
+	                        userDTO.getLastName(),
 	                        userDTO.getEmail().toLowerCase(),
-	                        userDTO.getLangKey(), 
-	                        userDTO.getRoles()
+	                        userDTO.getLangKey(),
+	                        userDTO.getRoles(),
+                            userDTO.getDeleted()
 	                    );
                         String baseUrl = BasicUtil.getEmailBasicUrl(request);
                         mailService.sendActivationEmail(user, baseUrl);
@@ -151,8 +153,8 @@ public class AccountResource {
                 	userDTO.getClasses(),
                 	userDTO.getDescription(),
                 	userDTO.getAvatarUrl(),
-                	userDTO.getFirstName(), 
-                	userDTO.getLastName(), 
+                	userDTO.getFirstName(),
+                	userDTO.getLastName(),
                 	userDTO.getEmail()
                 );
                 return new ResponseEntity<String>(HttpStatus.OK);
@@ -173,7 +175,7 @@ public class AccountResource {
         }
         userService.changePassword(password);
         String baseUrl = BasicUtil.getEmailBasicUrl(request);
-        
+
         return new ResponseEntity<>(HttpStatus.OK);
     }
 

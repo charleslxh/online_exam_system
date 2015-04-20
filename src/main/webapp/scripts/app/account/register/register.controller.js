@@ -20,6 +20,7 @@ angular.module('onlineExamSystemApp')
                 $scope.errorEmailExists = null;
                 $scope.errorUserNoExists = null;
                 $scope.registerAccount.roles = ['ROLE_STUDENT']
+                $scope.registerAccount.deleted = 0
                 Auth.createAccount($scope.registerAccount).then(function () {
                     $scope.success = 'OK';
                 }).catch(function (response) {

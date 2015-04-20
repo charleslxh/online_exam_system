@@ -38,6 +38,9 @@ public class UserDetailsService implements org.springframework.security.core.use
         String lowercaseLogin = login.toLowerCase();
         Optional<User> userFromDatabase =  userRepository.findOneByLogin(lowercaseLogin);
         return userFromDatabase.map(user -> {
+            if (user.getDeleted() != 0) {
+                throw new UsernameNotFoundException("User " + lowercaseLogin + " is frozen, please contact the administrator to activate");
+            }
             if (!user.getActivated()) {
                 throw new UserNotActivatedException("User " + lowercaseLogin + " was not activated");
             }

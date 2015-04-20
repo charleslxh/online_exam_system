@@ -5,8 +5,8 @@
             "teacher": "Teacher",
             "student": "Student",
             "role": "Role",
-            "man": "Male",
-            "female": "Femail",
+            "male": "Male",
+            "female": "Female",
             "unknow": "Unknow",
             "back": "Back",
             "home": {

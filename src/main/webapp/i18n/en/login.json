@@ -9,7 +9,7 @@
         },
         "messages": {
             "error": {
-                "authentication": "<strong>Authentication failed!</strong> Please check your credentials and try again."
+                "authentication": "<strong>Authentication failed!</strong> Please check your credentials and try again or contact with <a>admin</a>"
             }
         }
     }

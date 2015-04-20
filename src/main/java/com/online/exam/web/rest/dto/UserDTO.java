@@ -14,7 +14,7 @@ public class UserDTO {
     @Size(min = 1, max = 50)
     private String login;
 
-    @Pattern(regexp = "^[a-z0-9]*$")
+    @Pattern(regexp = "^[a-zA-Z0-9]*$")
     @NotNull
     @Size(min = 1, max = 50)
     private String userNo;
@@ -24,7 +24,7 @@ public class UserDTO {
     private String password;
 
     private Integer gender;
-    
+
     private Integer age;
 
     @Size(max = 15)
@@ -51,7 +51,7 @@ public class UserDTO {
 
     @Size(min = 2, max = 5)
     private String langKey;
-    
+
     private Integer deleted;
 
     private List<String> roles;
@@ -67,7 +67,7 @@ public class UserDTO {
         String email,
         String langKey,
         List<String> roles) {
-        
+
         this.login = login;
         this.password = password;
         this.firstName = firstName;
@@ -78,18 +78,18 @@ public class UserDTO {
     }
 
     public UserDTO(
-        String login, 
-        String userNo, 
-        String password, 
-        Integer gender, 
-        Integer age, 
-        String phone, 
+        String login,
+        String userNo,
+        String password,
+        Integer gender,
+        Integer age,
+        String phone,
         String classes,
-        String avatarUrl, 
-        String description, 
-        String firstName, 
-        String lastName, 
-        String email, 
+        String avatarUrl,
+        String description,
+        String firstName,
+        String lastName,
+        String email,
         String langKey,
         List<String> roles) {
 

@@ -24,7 +24,8 @@ angular.module('onlineExamSystemApp')
             $scope.user.roles = roles;
             $scope.user.password = 'abc123_'
             $scope.user.langKey = 'en'
-            
+            $scope.user.deleted = 0
+            console.log($scope.user)
             Auth.createAccount($scope.user).then(function () {
                     $scope.loadAll();
                     $scope.showTips = 'success';
@@ -32,6 +33,8 @@ angular.module('onlineExamSystemApp')
                     $('#saveUserTipsModal').modal('show');
                     $scope.clear();
                 }).catch(function (response) {
+                    console.log(response);
+                    // $scope.user.roles = roles[0
                     $scope.showTips = 'failed';
                     $('#saveUserModal').modal('hide');
                     $('#saveUserTipsModal').modal('show');
@@ -39,8 +42,12 @@ angular.module('onlineExamSystemApp')
             );
         };
 
-        $scope.update = function() {
-            console.log('user update');
+        $scope.update = function(login) {
+            User.get(login, function(result) {
+              console.log(result)
+              $scope.user = result;
+              $('#editUserModal').modal('show');
+            });
         };
 
         $scope.delete = function(login) {
@@ -62,7 +69,7 @@ angular.module('onlineExamSystemApp')
 
         $scope.clear = function() {
             $scope.user = {email: null, login: null, password: null, roles: null, userNo: null};
-            $scope.editForm.$setPristine();
-            $scope.editForm.$setUntouched();
+            $scope.saveForm.$setPristine();
+            $scope.saveForm.$setUntouched();
         }
     });

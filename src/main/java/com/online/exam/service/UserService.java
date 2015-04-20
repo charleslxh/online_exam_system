@@ -56,7 +56,7 @@ public class UserService {
     }
 
     public User createUserInformation(String login, String userNo, String password, String firstName, String lastName, String email,
-                                      String langKey,  List<String> roles) {
+                                      String langKey, List<String> roles, Integer deleted) {
         User newUser = new User();
         log.debug("Created Information for User roles: {}", roles);
         Authority authority = authorityRepository.findOne(roles.get(0));
@@ -72,6 +72,7 @@ public class UserService {
         newUser.setLangKey(langKey);
         // new user is not active
         newUser.setActivated(false);
+        newUser.setDeleted(deleted);
         // new user gets registration key
         newUser.setActivationKey(RandomUtil.generateActivationKey());
         authorities.add(authority);
@@ -82,15 +83,15 @@ public class UserService {
     }
 
     public void updateUserInformation(
-    		String login, 
-    		String phone, 
-    		Integer gender, 
-    		Integer age, 
-    		String classes, 
-    		String description, 
-    		String avatarUrl, 
-    		String firstName, 
-    		String lastName, 
+    		String login,
+    		String phone,
+    		Integer gender,
+    		Integer age,
+    		String classes,
+    		String description,
+    		String avatarUrl,
+    		String firstName,
+    		String lastName,
     		String email) {
         userRepository.findOneByLogin(SecurityUtils.getCurrentLogin()).ifPresent(u -> {
         	u.setLogin(login);

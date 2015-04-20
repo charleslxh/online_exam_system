@@ -19,7 +19,7 @@ angular.module('onlineExamSystemApp')
                 } else {
                     $rootScope.back();
                 }
-            }).catch(function () {
+            }).catch(function (response) {
                 $scope.authenticationError = true;
             });
         };

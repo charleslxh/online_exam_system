@@ -9,7 +9,7 @@
         },
         "messages": {
             "error": {
-                "authentication": "<strong>验证失败!</strong> 请检查您的登录信息, 并重试一次."
+                "authentication": "<strong>验证失败!</strong> 请检查您的登录信息, 并重试一次或联系<a>系统管理员</a>"
             }
         }
     }
