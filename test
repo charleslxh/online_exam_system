@@ -1,0 +1,168 @@
+==========================Ansyc==============================
+exports.trivialRequestResponseAPI = (clazz, eventMapping) ->
+  for api, event of eventMapping
+    do (event) ->
+      clazz::[api] = (options) ->
+        exports._request event.name or event, options, event.needSendAck
+
+  # add the Promise for propertity of all functions
+  for k, v of clazz.prototype
+    do (v) ->
+      clazz::["#{ k }Async"] = (options = {}) ->
+        promise = new Promise((resolve, reject) ->
+          options.onSuccess = (result) ->
+            resolve result
+          options.onError = (err) ->
+            reject err
+        )
+        v.call this, options
+        promise
+
+
+======================Promiss try...catch...=================
+'use strict'
+
+PENDING = undefined
+FULFILLED = 1
+REJECTED = 2
+
+isFunction = (obj) ->
+  'function' is typeof obj
+
+isArray = (obj) ->
+  Object::toString.call(obj) is '[object Array]'
+
+isThenable = (obj) ->
+  obj and typeof obj['then'] is 'function'
+
+class Promise
+  constructor: (resolver) ->
+    unless isFunction(resolver)
+      throw new TypeError('You must pass a resolver function as the first argument to the promise constructor')
+    return new Promise(resolver) unless this instanceof Promise
+    @_value
+    @_reason
+    @_status = PENDING
+    @_resolveHandlers = []
+    @_rejectHandlers = []
+
+    resolve = (value) =>
+      @transite(FULFILLED, value)
+
+    reject = (reason) =>
+      @transite(REJECTED, reason)
+
+    # setTimeout =>
+    #   reject "load timeout"
+    # , 5000
+
+    resolver(resolve, reject)
+
+  transite: (status, value) ->
+    if @_status isnt PENDING
+      return
+
+    setTimeout =>
+      @_status = status
+      @_publish value
+    , 0
+
+  _publish: (val) ->
+    st = @_status is FULFILLED
+    queue = this[if st then '_resolveHandlers' else '_rejectHandlers']
+    while fn = queue.shift()
+      val = fn.call(this, val) or val
+    this[if st then '_value' else '_reason'] = val
+    this['_resolveHandlers'] = this['_rejectHandlers'] = undefined
+
+  then: (onFulfilled, onRejected) ->
+    promise = this
+
+    new Promise(
+      (resolve, reject) ->
+        callback = (value) ->
+          ret = isFunction(onFulfilled) and onFulfilled(value) or value
+          if isThenable(ret)
+            ret.then (value) ->
+              resolve value
+            , (reason) ->
+              reject reason
+          else
+            resolve(ret)
+        errback = (reason) ->
+          reason = isFunction(onRejected) and onRejected(reason) or reason
+          reject(reason)
+
+        if promise._status is PENDING
+          promise._resolveHandlers.push(callback)
+          promise._rejectHandlers.push(errback)
+        else if promise._status is FULFILLED
+          callback @_value
+        else if promise._status is REJECTED
+          errback promise._reason
+    )
+
+  catch: (onRejected) ->
+    @then undefined, onRejected
+
+  delay: (ms) ->
+    @then (val) ->
+      Promise.delay(ms,val)
+
+Promise.delay = (ms, val) ->
+  new Promise(
+    (resolve, reject) ->
+      setTimeout ->
+        resolve(val)
+      ,ms
+  )
+
+Promise.resolve = (arg) ->
+  new Promise(
+    (resolve, reject) ->
+      resolve arg
+  )
+
+Promise.reject = (arg) ->
+  new Promise(
+    (resolve, reject) ->
+      reject arg
+  )
+
+Promise.all = (promises) ->
+  unless isArray(promises)
+    throw new TypeError('You must pass an array to all.')
+
+  new Promise((resolve, reject) ->
+    i = 0
+    result = []
+    len = promises.length
+
+    resolver = (index) ->
+      (value) ->
+        resolveAll index, value
+
+    rejecter = (reason) ->
+      reject reason
+
+    resolveAll = (index, value) ->
+      result[index] = value
+      if index == len - 1
+        resolve result
+
+    while i < len
+      promises[i].then resolver(i), rejecter
+      i++
+  )
+
+module.exports = Promise
+
+
+
+
+
+
+
+
+
+
