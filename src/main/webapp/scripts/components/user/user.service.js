@@ -11,12 +11,18 @@ angular.module('onlineExamSystemApp')
                     return data;
                 }
             },
-            'update': { method: 'PUT' }
+            'update': {method: 'PUT'}
         });
     });
 
 angular.module('onlineExamSystemApp')
     .factory('userDelete', function ($resource) {
-        return $resource('api/users/delete/', {}, {
+        return $resource('api/users/delete', {}, {
+        });
+    });
+
+angular.module('onlineExamSystemApp')
+    .factory('userUpdate', function ($resource) {
+        return $resource('api/users/update', {}, {
         });
     });

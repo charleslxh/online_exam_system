@@ -12,12 +12,17 @@
             "home": {
                 "title": "User Management",
                 "createLabel": "Create a new User",
-                "createOrEditLabel": "Create or edit a User"
+                "editLabel": "Edit a User"
             },
             "add": {
                 "title": "Tips",
                 "success": "Create A user success, Had send email to him/her, Please tell him/her to check your email for confirmation",
                 "failed": "Create User Failed, Please Check you information"
+            },
+            "edit": {
+                "title": "Tips",
+                "success": "Edit User success, Had send email to him/her, Please tell him/her to check your email for confirmation",
+                "failed": "Edit User Failed, Please Check you information"
             },
             "delete": {
                 "question": "Are you sure you want to delete User"

@@ -5,6 +5,8 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.util.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.filter.GenericFilterBean;
 
 import javax.servlet.FilterChain;
@@ -19,6 +21,8 @@ import java.io.IOException;
  * if a header corresponding to a valid user is found.
  */
 public class XAuthTokenFilter extends GenericFilterBean {
+
+    private final Logger log = LoggerFactory.getLogger(XAuthTokenFilter.class);
 
     private final static String XAUTH_TOKEN_HEADER_NAME = "x-auth-token";
 

@@ -30,17 +30,15 @@ public interface UserRepository extends JpaRepository<User, Long> {
 
     void delete(User t);
 
-    @Modifying 
-	@Query("update User u set u.password = ?1 where u.id = ?2") 
+    @Modifying
+	@Query("update User u set u.password = ?1 where u.id = ?2")
     int upadtePasswordById(String password, Long id);
-    
-    @Query("select u from User u where u.deleted = 0") 
-	List<User> findAllByDeleted();
-    
-    @Modifying 
-	@Query("update User u set u.deleted = 1 where u.id = ?1") 
-    int deleteUserLogic(Long id);
-    
 
-    
+    @Query("select u from User u where u.deleted = 0")
+	List<User> findAllByDeleted();
+
+    @Modifying
+	@Query("update User u set u.deleted = 1 where u.id = ?1")
+    int deleteUserLogic(Long id);
+
 }

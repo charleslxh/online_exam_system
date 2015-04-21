@@ -2,8 +2,11 @@ package com.online.exam.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
 import com.online.exam.domain.User;
+import com.online.exam.web.rest.dto.UserDTO;
+import com.online.exam.repository.AuthorityRepository;
 import com.online.exam.repository.UserRepository;
 import com.online.exam.security.AuthoritiesConstants;
+import com.online.exam.security.SecurityUtils;
 import com.online.exam.service.UserService;
 
 import org.slf4j.Logger;
@@ -12,11 +15,13 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.online.exam.web.rest.util.BasicUtil;
 import com.online.exam.web.rest.util.PaginationUtil;
 
 import org.springframework.data.domain.Page;
@@ -32,6 +37,7 @@ import javax.validation.Valid;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.Optional;
+import java.util.function.Supplier;
 /**
  * REST controller for managing users.
  */
@@ -43,9 +49,12 @@ public class UserResource {
 
     @Inject
     private UserRepository userRepository;
-    
+
     @Inject
     private UserService userService;
+    
+    @Inject
+    private AuthorityRepository authorityRepository;
 
     /**
      * POST  /users -> Create a new user.
@@ -67,19 +76,36 @@ public class UserResource {
      * PUT  /users -> Updates an existing user.
      */
     @RequestMapping(value = "/users",
-        method = RequestMethod.PUT,
-        produces = MediaType.APPLICATION_JSON_VALUE)
+    		method = RequestMethod.PUT,
+            produces = MediaType.APPLICATION_JSON_VALUE)
     @Timed
-    public ResponseEntity<Void> update(@Valid User user) throws URISyntaxException {
-        log.debug("REST request to update User : {}", user);
+    public ResponseEntity<?> update(@RequestBody User user) throws URISyntaxException {
+        log.debug("REST request to update user : {}", user);
         if (user.getId() == null) {
-            return create(user);
+           return create(user);
         };
-        userRepository.save(user);
-        return ResponseEntity.ok().build();
+        return userRepository
+                .findOneByEmail(user.getEmail())
+                .filter(u -> u.getLogin().equals(user.getLogin()))
+                .map(u -> {
+                    userService.updateOtherUserInformation(
+                    	user.getLogin(),
+                    	user.getPhone(),
+                    	user.getGender(),
+                    	user.getAge(),
+                    	user.getClasses(),
+                    	user.getDescription(),
+                    	user.getAvatarUrl(),
+                    	user.getFirstName(),
+                    	user.getLastName(),
+                    	user.getEmail()
+                    );
+                    return new ResponseEntity<String>(HttpStatus.OK);
+                })
+                .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
-    /**
+	/**
      * GET  /users -> get all users.
      */
     @RequestMapping(value = "/users",

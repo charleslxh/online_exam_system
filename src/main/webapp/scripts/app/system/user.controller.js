@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('onlineExamSystemApp')
-    .controller('UserController', function ($scope, Principal, ParseLinks, User, Auth, userDelete) {
+    .controller('UserController', function ($scope, Principal, ParseLinks, User, Auth, userDelete, userUpdate) {
         $scope.users = [];
         $scope.page = 1;
 
@@ -50,6 +50,30 @@ angular.module('onlineExamSystemApp')
             });
         };
 
+        $scope.confirmUpdate = function() {
+            var roles = [];
+            roles.push($scope.user.roles);
+            $scope.user.roles = roles;
+            $scope.user.password = 'updatePassword'
+            $scope.user.langKey = 'en'
+            $scope.user.gender = parseInt($scope.user.gender)
+            console.log($scope.user)
+            User.update($scope.user,
+                function(result) {
+                    $scope.loadAll();
+                    $scope.editTips = 'success';
+                    $('#editUserModal').modal('hide');
+                    $('#editUserTipsModal').modal('show');
+                    $scope.clear();
+                },
+                function(err) {
+                    $scope.editTips = 'failed';
+                    $('#editUserModal').modal('hide');
+                    $('#editUserTipsModal').modal('show');
+                }
+            )
+        }
+
         $scope.delete = function(login) {
             User.get(login, function(result) {
               $scope.user = result;
@@ -65,11 +89,11 @@ angular.module('onlineExamSystemApp')
                     $scope.clear();
                 }
             );
-        }
+        };
 
         $scope.clear = function() {
             $scope.user = {email: null, login: null, password: null, roles: null, userNo: null};
             $scope.saveForm.$setPristine();
             $scope.saveForm.$setUntouched();
-        }
+        };
     });

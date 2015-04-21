@@ -12,12 +12,17 @@
             "home": {
                 "title": "用户管理",
                 "createLabel": "创建用户",
-                "createOrEditLabel": "创建或编辑用户"
+                "editLabel": "编辑用户"
             },
             "add": {
                 "title": "提示",
                 "success": "添加用户成功，请通知他/她确认邮件。",
                 "failed": "添加用户失败，请重新输入用户信息。"
+            },
+            "edit": {
+                "title": "提示",
+                "success": "编辑用户成功，请通知他/她确认邮件。",
+                "failed": "编辑用户失败，请重新输入用户信息。"
             },
             "delete": {
                 "question": "你确定要删除用户"

@@ -12,7 +12,7 @@
                 <form name="saveForm" class="form-horizontal" role="form" ng-submit="create()" show-validation>
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true" ng-click="clear()">&times;</button>
-                        <h4 class="modal-title" id="myUserLabel" translate="onlineExamSystemApp.system.home.createOrEditLabel">Create or edit a User</h4>
+                        <h4 class="modal-title" id="myUserLabel" translate="onlineExamSystemApp.system.home.createLabel">Create a User</h4>
                     </div>
                     <div class="modal-body">
                         <div class="form-group">
@@ -41,7 +41,7 @@
                             <div class="col-sm-10">
                                 <input type="text" class="form-control" value="{{user.userNo}}" name="userNo" ng-model="user.userNo" required>
                             </div>
-                            <div ng-show="editForm.userNo.$invalid"></div>
+                            <div ng-show="saveForm.userNo.$invalid"></div>
                         </div>
 
                         <div class="form-group">
@@ -49,7 +49,7 @@
                             <div class="col-sm-10">
                                 <input type="text" class="form-control" value="{{user.login}}" name="login" ng-model="user.login" required>
                             </div>
-                            <div ng-show="editForm.login.$invalid"></div>
+                            <div ng-show="saveForm.login.$invalid"></div>
                         </div>
 
                         <div class="form-group">
@@ -57,7 +57,7 @@
                             <div class="col-sm-10">
                                 <input type="email" class="form-control" value="{{user.email}}" name="email" ng-model="user.email" required>
                             </div>
-                            <div ng-show="editForm.email.$invalid"></div>
+                            <div ng-show="saveForm.email.$invalid"></div>
                         </div>
 
                     </div>
@@ -65,7 +65,7 @@
                         <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
                             <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
                         </button>
-                        <button type="submit" ng-disabled="editForm.$invalid" class="btn btn-primary">
+                        <button type="submit" ng-disabled="saveForm.$invalid" class="btn btn-primary">
                             <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
                         </button>
                     </div>
@@ -112,25 +112,32 @@
          aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <form name="editForm" class="form-horizontal" role="form" ng-submit="update()" show-validation>
+                <form name="editForm" class="form-horizontal" role="form" ng-submit="confirmUpdate()" show-validation>
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true" ng-click="clear()">&times;</button>
-                        <h4 class="modal-title" id="myUserLabel" translate="onlineExamSystemApp.system.home.createOrEditLabel">Create or edit a User</h4>
+                        <h4 class="modal-title" id="myUserLabel" translate="onlineExamSystemApp.system.home.editLabel">edit a User</h4>
                     </div>
                     <div class="modal-body">
-                        <div class="form-group">
+                        <!-- <div class="form-group">
                             <label for="" class="col-sm-2 control-label" translate="onlineExamSystemApp.system.role">Role</label>
                             <div class="col-sm-10">
                                 <label class="radio-inline">
-                                  <input type="radio" name="role" id="role" ng-model="user.roles" value="ROLE_ADMIN" checked="checked">
+                                  <input type="radio" name="role" id="role" ng-model="user.roles"
+                                    value="ROLE_ADMIN" checked="checked" required>
                                   <span translate="onlineExamSystemApp.system.admin"></span>
                                 </label>
                                 <label class="radio-inline">
-                                  <input type="radio" name="role" id="role" ng-model="user.roles" value="ROLE_TEACHER">
+                                  <input type="radio" name="role" id="role" ng-model="user.roles"
+                                    value="ROLE_TEACHER" required>
                                   <span translate="onlineExamSystemApp.system.teacher"></span>
                                 </label>
+                                <label class="radio-inline">
+                                  <input type="radio" name="role" id="role" ng-model="user.roles"
+                                    value="ROLE_STUDENT" required>
+                                  <span translate="onlineExamSystemApp.system.student"></span>
+                                </label>
                             </div>
-                        </div>
+                        </div> -->
 
                         <div class="form-group">
                             <label class="col-sm-2 control-label" translate="onlineExamSystemApp.system.id">ID</label>
@@ -215,6 +222,33 @@
                         </button>
                         <button type="submit" ng-disabled="editForm.$invalid" class="btn btn-primary">
                             <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="editUserTipsModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form name="deleteForm">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                                ng-click="clear()">&times;</button>
+                        <h4 class="modal-title" translate="onlineExamSystemApp.system.edit.title">Create User tips</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="alert alert-success" ng-show="editTips === 'success'">
+                            <span class="text-center" translate="onlineExamSystemApp.system.edit.success"></span>
+                        </div>
+                        <div class="alert alert-danger" ng-show="editTips === 'failed'">
+                            <span class="text-center" translate="onlineExamSystemApp.system.edit.failed"></span>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+                            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
                         </button>
                     </div>
                 </form>

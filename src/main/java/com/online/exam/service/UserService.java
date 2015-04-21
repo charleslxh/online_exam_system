@@ -108,6 +108,34 @@ public class UserService {
             log.debug("Changed Information for User: {}", u);
         });
     }
+    
+    public void updateOtherUserInformation(
+    		String login,
+    		String phone,
+    		Integer gender,
+    		Integer age,
+    		String classes,
+    		String description,
+    		String avatarUrl,
+    		String firstName,
+    		String lastName,
+    		String email) {
+        userRepository.findOneByLogin(login).ifPresent(u -> {
+        	log.debug("Changed other Information for User: {}", u);
+        	u.setLogin(login);
+        	u.setPhone(phone);
+        	u.setGender(gender);
+        	u.setAge(age);
+        	u.setClasses(classes);
+        	u.setDescription(description);
+        	u.setAvatarUrl(avatarUrl);
+            u.setFirstName(firstName);
+            u.setLastName(lastName);
+            u.setEmail(email);
+            userRepository.save(u);
+            log.debug("Changed other Information for User: {}", u);
+        });
+    }
 
     public void changePassword(String password) {
         userRepository.findOneByLogin(SecurityUtils.getCurrentLogin()).ifPresent(u-> {

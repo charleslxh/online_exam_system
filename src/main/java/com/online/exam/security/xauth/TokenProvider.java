@@ -2,11 +2,15 @@ package com.online.exam.security.xauth;
 
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.codec.Hex;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 public class TokenProvider {
+
+    private final Logger log = LoggerFactory.getLogger(TokenProvider.class);
 
     private final String secretKey;
     private final int tokenValidity;
