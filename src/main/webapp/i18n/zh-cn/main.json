@@ -1,20 +1,39 @@
 {
     "main": {
-        "title": "欢迎, Java Hipster!",
+        "title": "欢迎来到在线考试系统",
         "subtitle": "这里是首页",
         "logged": {
             "message": "您目前是以 \"{{username}}\" 账号登录."
         },
-        "question": "如果您有任何有关 JHipster 的问题, 可以查阅下列资源:",
+        "question": "如果您有任何有关系统的问题, 可以以如下方式联系我:",
         "link": {
-            "homepage": "JHipster 首頁",
-            "stackoverflow": "Stack Overflow 上关于 JHipster 的讨论",
-            "bugtracker": "JHipster 的缺陷追踪",
-            "contact": "在 Twitter 上联络 @java_hipster"
+            "phone": "Mobile: 18516657398",
+            "skype": "Skype: justin.liao464",
+            "qq": "QQ: 1136546636",
+            "contact": "Email: charleslxh@icloud.com"
         },
         "like": "如果您喜欢, 请记得在GitHub: ",
         "github": "<a href='https://github.com/JustinLiao1314/online_exam_system'>https://github.com/JustinLiao1314/online_exam_system </a>",
         "star": "加星",
-        "share": "分享"
+        "share": "分享",
+        "roles": {
+            "admin": {
+                "name": "系统管理员",
+                "description": "系统管理员可以管理用户信息"
+            },
+            "teacher": {
+                "name": "老师",
+                "description": "老师可以管理试题、试卷"
+            },
+            "student": {
+                "name": "学生",
+                "description": "学生可以参加考试"
+            }
+        },
+        "nav": {
+            "home": "首页",
+            "news": "最新信息",
+            "me": "关于我"
+        }
     }
 }

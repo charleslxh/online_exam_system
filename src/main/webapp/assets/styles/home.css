@@ -1,0 +1,27 @@
+#home .col-md-4 {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+#home .col-md-4  .container-fluid {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+#home .col-md-4 .carousel-control {
+  top: 48%;
+  bottom: 45%;
+  opacity: 0.2;
+  border-radius: 20px;
+  font-size: 24px;
+}
+
+#home #news .container-fluid {
+  margin-top: 10px;
+  overflow:auto;
+  max-height: 450px;
+}
+
+#home #news .container-fluid .row-fluid {
+  margin-top: 5px;
+}

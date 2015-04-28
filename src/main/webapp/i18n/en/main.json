@@ -1,20 +1,39 @@
 {
     "main": {
-        "title": "Welcome, Java Hipster!",
+        "title": "Welcome to Online Exam System",
         "subtitle": "This is your homepage",
         "logged": {
             "message": "You are logged in as user \"{{username}}\"."
         },
-        "question": "If you have any question on JHipster:",
+        "question": "If you have any question on this system, You can contact me in follow ways:",
         "link": {
-            "homepage": "JHipster homepage",
-            "stackoverflow": "JHipster on Stack Overflow",
-            "bugtracker": "JHipster bug tracker",
-            "contact": "contact @java_hipster on Twitter"
+            "phone": "Mobile: 18516657398",
+            "skype": "Skype: justin.liao464",
+            "qq": "QQ: 1136546636",
+            "contact": "Email: charleslxh@icloud.com"
         },
         "like": "If you like it, don't forget to GitHub: ",
         "github": "https://github.com/JustinLiao1314/online_exam_system",
         "star": "Star",
-        "share": "Share"
+        "share": "Share",
+        "roles": {
+            "admin": {
+                "name": "System Admin",
+                "description": "System admin can managing users."
+            },
+            "teacher": {
+                "name": "Content admin",
+                "description": "Content admin can manage questions and exams."
+            },
+            "student": {
+                "name": "Student",
+                "description": "Student can take exam."
+            }
+        },
+        "nav": {
+            "home": "Home",
+            "news": "News",
+            "me": "About Me"
+        }
     }
 }
