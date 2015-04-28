@@ -1,0 +1,32 @@
+{
+    "onlineExamSystemApp": {
+        "question" : {
+            "home": {
+                "title": "试题管理",
+                "createLabel": "创建试题",
+                "createOrEditLabel": "创建或编辑试题"
+            },
+            "delete": {
+                "question": "你确定要删除试题编号为 {{ id }} 的试题吗?"
+            },
+            "detail": {
+                "title": "试题列表"
+            },
+            "options": "操作",
+            "questionNo": "试题编号",
+            "questionName": "试题名称",
+            "questionType": "试题类型",
+            "subject": "所属科目",
+            "createTime": "创建时间",
+            "lastUpdateTime": "更新时间",
+            "deleted": "状态",
+            "code": "编号",
+            "author": "作者",
+            "optionA": "A选项",
+            "optionB": "B选项",
+            "optionC": "C选项",
+            "optionD": "D选项",
+            "answer": "答案"
+        }
+    }
+}

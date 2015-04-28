@@ -1,0 +1,153 @@
+{
+    "relationships": [],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "questionNo",
+            "fieldType": "String",
+            "fieldNameCapitalized": "QuestionNo",
+            "fieldNameUnderscored": "question_no",
+            "fieldInJavaBeanMethod": "QuestionNo",
+            "fieldValidate": true,
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "questionName",
+            "fieldType": "String",
+            "fieldNameCapitalized": "QuestionName",
+            "fieldNameUnderscored": "question_name",
+            "fieldInJavaBeanMethod": "QuestionName",
+            "fieldValidate": true,
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldId": 3,
+            "fieldName": "questionType",
+            "fieldType": "String",
+            "fieldNameCapitalized": "QuestionType",
+            "fieldNameUnderscored": "question_type",
+            "fieldInJavaBeanMethod": "QuestionType",
+            "fieldValidate": true,
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldId": 4,
+            "fieldName": "subject",
+            "fieldType": "String",
+            "fieldNameCapitalized": "Subject",
+            "fieldNameUnderscored": "subject",
+            "fieldInJavaBeanMethod": "Subject",
+            "fieldValidate": false
+        },
+        {
+            "fieldId": 5,
+            "fieldName": "createTime",
+            "fieldType": "DateTime",
+            "fieldNameCapitalized": "CreateTime",
+            "fieldNameUnderscored": "create_time",
+            "fieldInJavaBeanMethod": "CreateTime",
+            "fieldValidate": false
+        },
+        {
+            "fieldId": 6,
+            "fieldName": "lastUpdateTime",
+            "fieldType": "DateTime",
+            "fieldNameCapitalized": "LastUpdateTime",
+            "fieldNameUnderscored": "last_update_time",
+            "fieldInJavaBeanMethod": "LastUpdateTime",
+            "fieldValidate": false
+        },
+        {
+            "fieldId": 7,
+            "fieldName": "deleted",
+            "fieldType": "Integer",
+            "fieldNameCapitalized": "Deleted",
+            "fieldNameUnderscored": "deleted",
+            "fieldInJavaBeanMethod": "Deleted",
+            "fieldValidate": false
+        },
+        {
+            "fieldId": 8,
+            "fieldName": "code",
+            "fieldType": "String",
+            "fieldNameCapitalized": "Code",
+            "fieldNameUnderscored": "code",
+            "fieldInJavaBeanMethod": "Code",
+            "fieldValidate": false
+        },
+        {
+            "fieldId": 9,
+            "fieldName": "author",
+            "fieldType": "String",
+            "fieldNameCapitalized": "Author",
+            "fieldNameUnderscored": "author",
+            "fieldInJavaBeanMethod": "Author",
+            "fieldValidate": false
+        },
+        {
+            "fieldId": 10,
+            "fieldName": "optionA",
+            "fieldType": "String",
+            "fieldNameCapitalized": "OptionA",
+            "fieldNameUnderscored": "option_a",
+            "fieldInJavaBeanMethod": "OptionA",
+            "fieldValidate": false
+        },
+        {
+            "fieldId": 11,
+            "fieldName": "optionB",
+            "fieldType": "String",
+            "fieldNameCapitalized": "OptionB",
+            "fieldNameUnderscored": "option_b",
+            "fieldInJavaBeanMethod": "OptionB",
+            "fieldValidate": false
+        },
+        {
+            "fieldId": 12,
+            "fieldName": "optionC",
+            "fieldType": "String",
+            "fieldNameCapitalized": "OptionC",
+            "fieldNameUnderscored": "option_c",
+            "fieldInJavaBeanMethod": "OptionC",
+            "fieldValidate": false
+        },
+        {
+            "fieldId": 13,
+            "fieldName": "optionD",
+            "fieldType": "String",
+            "fieldNameCapitalized": "OptionD",
+            "fieldNameUnderscored": "option_d",
+            "fieldInJavaBeanMethod": "OptionD",
+            "fieldValidate": false
+        },
+        {
+            "fieldId": 14,
+            "fieldName": "answer",
+            "fieldType": "String",
+            "fieldNameCapitalized": "Answer",
+            "fieldNameUnderscored": "answer",
+            "fieldInJavaBeanMethod": "Answer",
+            "fieldValidate": true,
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "fieldsContainOwnerManyToMany": false,
+    "fieldsContainOneToMany": false,
+    "fieldsContainLocalDate": false,
+    "fieldsContainCustomTime": true,
+    "fieldsContainBigDecimal": false,
+    "fieldsContainDateTime": true,
+    "fieldsContainDate": false,
+    "changelogDate": "20150428124746",
+    "pagination": "pager",
+    "validation": true
+}

@@ -1,0 +1,32 @@
+{
+    "onlineExamSystemApp": {
+        "question" : {
+            "home": {
+                "title": "Questions",
+                "createLabel": "Créer un nouveau Question",
+                "createOrEditLabel": "Créer ou éditer un Question"
+            },
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Question {{ id }} ?"
+            },
+            "detail": {
+                "title": "Question"
+            },
+            "questionNo": "QuestionNo",
+            "questionName": "QuestionName",
+            "questionType": "QuestionType",
+            "subject": "Subject",
+            "createTime": "CreateTime",
+            "lastUpdateTime": "LastUpdateTime",
+            "deleted": "Deleted",
+            "code": "Code",
+            "author": "Author",
+            "optionA": "OptionA",
+            "optionB": "OptionB",
+            "optionC": "OptionC",
+            "optionD": "OptionD",
+            "answer": "Answer"
+        }
+    }
+}
+

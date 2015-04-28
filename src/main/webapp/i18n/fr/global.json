@@ -9,6 +9,7 @@
                 "main": "Entités",
                 "sTUDENT": "STUDENT",
                 "tEACHER": "TEACHER",
+                "question": "Question",
                 "additionalEntity": "JHipster will add addtional entities"
             },
             "account": {

@@ -1,1 +1,4 @@
+com\online\exam\web\rest\QuestionResource.class
+com\online\exam\repository\QuestionRepository.class
 com\online\exam\web\rest\util\BasicUtil.class
+com\online\exam\domain\Question.class

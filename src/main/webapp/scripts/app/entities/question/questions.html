@@ -1,0 +1,228 @@
+<div>
+
+    <h2 translate="onlineExamSystemApp.question.home.title">Question</h2>
+
+    <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#saveQuestionModal" ng-click="clear()">
+        <span class="glyphicon glyphicon-flash"></span> <span translate="onlineExamSystemApp.question.home.createLabel">Create a new Question</span>
+    </button>
+    <div class="modal fade" id="saveQuestionModal" tabindex="-1" role="dialog" aria-labelledby="myQuestionLabel"
+         aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form name="editForm" role="form" novalidate ng-submit="create()" show-validation>
+
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                                ng-click="clear()">&times;</button>
+                        <h4 class="modal-title" id="myQuestionLabel" translate="onlineExamSystemApp.question.home.createOrEditLabel">Create or edit a Question</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label>ID</label>
+                            <input type="text" class="form-control" name="id"
+                                   ng-model="question.id" readonly>
+                        </div>
+
+                        <div class="form-group">
+                            <label translate="onlineExamSystemApp.question.questionNo">QuestionNo</label>
+                            <input type="text" class="form-control" name="questionNo"
+                                   ng-model="question.questionNo" required>
+
+                            <div ng-show="editForm.questionNo.$invalid">
+                                <p class="help-block"
+                                   ng-show="editForm.questionNo.$error.required" translate="entity.validation.required">
+                                    This field is required.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label translate="onlineExamSystemApp.question.questionName">QuestionName</label>
+                            <input type="text" class="form-control" name="questionName"
+                                   ng-model="question.questionName" required>
+
+                            <div ng-show="editForm.questionName.$invalid">
+                                <p class="help-block"
+                                   ng-show="editForm.questionName.$error.required" translate="entity.validation.required">
+                                    This field is required.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label translate="onlineExamSystemApp.question.questionType">QuestionType</label>
+                            <input type="text" class="form-control" name="questionType"
+                                   ng-model="question.questionType" required>
+
+                            <div ng-show="editForm.questionType.$invalid">
+                                <p class="help-block"
+                                   ng-show="editForm.questionType.$error.required" translate="entity.validation.required">
+                                    This field is required.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label translate="onlineExamSystemApp.question.subject">Subject</label>
+                            <input type="text" class="form-control" name="subject"
+                                   ng-model="question.subject">
+
+                        </div>
+                        <div class="form-group">
+                            <label translate="onlineExamSystemApp.question.createTime">CreateTime</label>
+                            <input type="datetime-local" class="form-control" name="createTime"
+                                   ng-model="question.createTime" ng-model-options="{timezone: 'UTC'}">
+
+                        </div>
+                        <div class="form-group">
+                            <label translate="onlineExamSystemApp.question.lastUpdateTime">LastUpdateTime</label>
+                            <input type="datetime-local" class="form-control" name="lastUpdateTime"
+                                   ng-model="question.lastUpdateTime" ng-model-options="{timezone: 'UTC'}">
+
+                        </div>
+                        <div class="form-group">
+                            <label translate="onlineExamSystemApp.question.deleted">Deleted</label>
+                            <input type="number" class="form-control" name="deleted"
+                                   ng-model="question.deleted">
+
+                        </div>
+                        <div class="form-group">
+                            <label translate="onlineExamSystemApp.question.code">Code</label>
+                            <input type="text" class="form-control" name="code"
+                                   ng-model="question.code">
+
+                        </div>
+                        <div class="form-group">
+                            <label translate="onlineExamSystemApp.question.author">Author</label>
+                            <input type="text" class="form-control" name="author"
+                                   ng-model="question.author">
+
+                        </div>
+                        <div class="form-group">
+                            <label translate="onlineExamSystemApp.question.optionA">OptionA</label>
+                            <input type="text" class="form-control" name="optionA"
+                                   ng-model="question.optionA">
+
+                        </div>
+                        <div class="form-group">
+                            <label translate="onlineExamSystemApp.question.optionB">OptionB</label>
+                            <input type="text" class="form-control" name="optionB"
+                                   ng-model="question.optionB">
+
+                        </div>
+                        <div class="form-group">
+                            <label translate="onlineExamSystemApp.question.optionC">OptionC</label>
+                            <input type="text" class="form-control" name="optionC"
+                                   ng-model="question.optionC">
+
+                        </div>
+                        <div class="form-group">
+                            <label translate="onlineExamSystemApp.question.optionD">OptionD</label>
+                            <input type="text" class="form-control" name="optionD"
+                                   ng-model="question.optionD">
+
+                        </div>
+                        <div class="form-group">
+                            <label translate="onlineExamSystemApp.question.answer">Answer</label>
+                            <input type="text" class="form-control" name="answer"
+                                   ng-model="question.answer" required>
+
+                            <div ng-show="editForm.answer.$invalid">
+                                <p class="help-block"
+                                   ng-show="editForm.answer.$error.required" translate="entity.validation.required">
+                                    This field is required.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+                            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+                        </button>
+                        <button type="submit" ng-disabled="editForm.$invalid" class="btn btn-primary">
+                            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="deleteQuestionConfirmation">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form name="deleteForm" ng-submit="confirmDelete(question.id)">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                                ng-click="clear()">&times;</button>
+                        <h4 class="modal-title" translate="entity.delete.title">Confirm delete operation</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p translate="onlineExamSystemApp.question.delete.question" translate-values="{id: '{{question.id}}'}">Are you sure you want to delete this Question?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+                            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+                        </button>
+                        <button type="submit" ng-disabled="deleteForm.$invalid" class="btn btn-danger">
+                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th translate="onlineExamSystemApp.question.questionNo">QuestionNo</th>
+                    <th translate="onlineExamSystemApp.question.questionName">QuestionName</th>
+                    <th translate="onlineExamSystemApp.question.questionType">QuestionType</th>
+                    <th translate="onlineExamSystemApp.question.subject">Subject</th>
+                    <th translate="onlineExamSystemApp.question.createTime">CreateTime</th>
+                    <th translate="onlineExamSystemApp.question.lastUpdateTime">LastUpdateTime</th>
+                    <th translate="onlineExamSystemApp.question.author">Author</th>
+                    <th translate="onlineExamSystemApp.question.options">Options</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="question in questions">
+                    <td><a ui-sref="questionDetail({id:question.id})">{{question.id}}</a></td>
+                    <td>{{question.questionNo}}</td>
+                    <td>{{question.questionName}}</td>
+                    <td><span class="label label-danger">{{question.questionType}}</span></td>
+                    <td><span class="label label-primary">{{question.subject}}</span></td>
+                    <td>{{question.createTime | date}}</td>
+                    <td>{{question.lastUpdateTime | date}}</td>
+                    <td>{{question.author}}</td>
+                    <td>
+                        <button type="submit"
+                                ui-sref="questionDetail({id:question.id})"
+                                class="btn btn-info">
+                            <span class="glyphicon glyphicon-eye-open"></span>&nbsp;<span translate="entity.action.view"> View</span>
+                        </button>
+                        <button type="submit"
+                                ng-click="update(question.id)"
+                                class="btn btn-primary">
+                            <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span translate="entity.action.edit"> Edit</span>
+                        </button>
+                        <button type="submit"
+                                ng-click="delete(question.id)"
+                                class="btn btn-danger">
+                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete"> Delete</span>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <nav>
+            <ul class="pager">
+                <li ng-show="links['first']" ng-click="loadPage(links['first'])"><a href="#">&lt;&lt;</a></li>
+                <li ng-show="links['prev']" ng-click="loadPage(links['prev'])"><a href="#">&lt;</a></li>
+                <li ng-show="links['next']" ng-click="loadPage(links['next'])"><a href="#">&gt;</a></li>
+                <li ng-show="links['last']" ng-click="loadPage(links['last'])"><a href="#">&gt;&gt;</a></li>
+            </ul>
+        </nav>
+    </div>
+</div>

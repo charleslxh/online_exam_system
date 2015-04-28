@@ -1,0 +1,134 @@
+
+<div>
+    <h2><span translate="onlineExamSystemApp.question.detail.title">Question</span> {{question.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th translate="entity.detail.field">Field</th>
+                    <th translate="entity.detail.value">Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <span translate="onlineExamSystemApp.question.questionNo">QuestionNo</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{question.questionNo}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="onlineExamSystemApp.question.questionName">QuestionName</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{question.questionName}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="onlineExamSystemApp.question.questionType">QuestionType</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{question.questionType}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="onlineExamSystemApp.question.subject">Subject</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{question.subject}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="onlineExamSystemApp.question.createTime">CreateTime</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{question.createTime}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="onlineExamSystemApp.question.lastUpdateTime">LastUpdateTime</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{question.lastUpdateTime}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="onlineExamSystemApp.question.deleted">Deleted</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{question.deleted}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="onlineExamSystemApp.question.code">Code</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{question.code}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="onlineExamSystemApp.question.author">Author</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{question.author}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="onlineExamSystemApp.question.optionA">OptionA</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{question.optionA}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="onlineExamSystemApp.question.optionB">OptionB</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{question.optionB}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="onlineExamSystemApp.question.optionC">OptionC</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{question.optionC}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="onlineExamSystemApp.question.optionD">OptionD</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{question.optionD}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="onlineExamSystemApp.question.answer">Answer</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{question.answer}}" readonly>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            ui-sref="question"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>
